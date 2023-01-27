@@ -9,7 +9,7 @@ import { frontend_url } from './components/service component/url_info';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <BrowserRouter basename={frontend_url}>
+    <BrowserRouter>
     <App />
     </BrowserRouter>
   </React.StrictMode>
