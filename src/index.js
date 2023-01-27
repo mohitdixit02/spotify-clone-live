@@ -9,7 +9,7 @@ import { frontend_url } from './components/service component/url_info';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename='/spotify-clone-live/'>
     <App />
     </BrowserRouter>
   </React.StrictMode>
