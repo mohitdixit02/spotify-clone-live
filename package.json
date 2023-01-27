@@ -1,7 +1,7 @@
 {
   "name": "spotify",
   "proxy": "https://mohitvsht02.pythonanywhere.com/",
-  "homepage": "https://mohitdixit02.github.io/spotify-clone-live/",
+  "homepage": "https://mohitdixit02.github.io/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
