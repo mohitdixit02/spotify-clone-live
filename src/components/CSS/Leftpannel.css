@@ -1,0 +1,140 @@
+.leftpannel{
+    background-color: rgba(0,0,0,255);
+    color: lightgray;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    width: 16%;
+    height:88.3vh;
+}
+.Link{
+    text-decoration: none;
+    color: rgb(177, 177, 177);
+}
+.leftdx{
+    margin: 20px;
+    font-size: 14px;
+}
+.left1{
+    display: flex;
+    column-gap: 16px;
+}
+.left1 ul li span{
+    font-style: normal;
+    font-size: 15px;
+    padding-left: 14px;
+    bottom: 3px;
+    position: relative;
+}
+.left1 ul li i{
+    font-size: 24px;
+}
+.left1 ul li{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    cursor: pointer;
+}
+.left1 ul li:hover{
+    color: ghostwhite;
+}
+.left_logo{
+    padding: 25px 5px 8px 16px;
+}
+.left_logo img{
+    height: 41px;
+    width: 145px;
+}
+
+.hr{
+    border:0;
+    background-color: gray;
+    height: 0.1px;
+}
+
+.left2{
+    margin-top: 30px;
+    font-size: 16px;
+    display: flex;
+    column-gap: 16px;
+}
+.left2 ul li{
+    margin: 18px 0px 18px 0px;
+    opacity: 70%;
+}
+.left2 ul li span{
+    margin-left: 13px;
+    color: lightgray;
+    cursor: pointer;
+}
+#create span{
+    position: relative;
+    bottom: 3px;
+}
+.left2 ul li:hover{
+    opacity: 100%;
+}
+.left2 ul li span:hover{
+    color: white;
+}
+/* .liked_songs_active{
+    color: white;
+    opacity: 100%;
+} */
+
+
+.bi-plus{
+    font-size: 22px;
+    background-color: rgb(177, 177, 177);
+    color: black;
+    border-radius: 2px;
+}
+.likedheart{
+    background-image: linear-gradient(120deg,rgb(0, 0, 179),white);
+    font-size: 12px;
+    border-radius: 2px;
+    padding: 6px;
+    color: white;
+}
+.active{
+    text-decoration: none;
+    color: ghostwhite;
+}
+
+/* Playlist Section CSS */
+.playlist_section{
+    margin-top: 15px;
+    font-size: 14px;
+    cursor: pointer;
+    color: rgb(135, 135, 135);
+}
+.playlist_section ul li:hover{
+    color: white;
+}
+.playlist_section ul li{
+    padding-top: 6px;
+    padding-bottom: 6px;
+}
+#playlist_holder_pannel{
+    height: 30vh;
+    overflow-y: scroll;
+}
+#playlist_holder_pannel::-webkit-scrollbar{
+    background-color: transparent;
+    width: 5px;
+}
+#playlist_holder_pannel::-webkit-scrollbar-thumb{
+    background-color: gray;
+}
+.active_list{
+    color: white;
+}
+.list_left_class{
+    position: relative;
+}
+.bi-x{
+    position: absolute;
+    right: 0;
+    font-size: 18px;
+    color: rgb(82, 82, 82);
+}
+.bi-x:hover{
+    color:white;
+}

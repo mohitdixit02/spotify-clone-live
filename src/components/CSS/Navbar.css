@@ -1,0 +1,113 @@
+/* Nav Bar */
+.nav{
+    color: lightgray;
+    display: flex;
+    column-gap: 40vw;
+    width: 81vw;
+    height: 37px;
+    padding: 15px 5px 4.8px 45px;
+}
+
+/* Left Buttons */
+.left_nav{
+    display: flex;
+    column-gap: 2vw;
+}
+.bttn_nav{
+    display: flex;
+    column-gap: 10px;
+}
+.bttn_nav i{
+    padding: 6px 6px 0px 6px;
+    font-size: 22px;
+    font-weight: bolder;
+    border-radius: 500px;
+    background-color:rgb(27,27,27);
+    color: white;
+    cursor: pointer;
+}
+.bttn_nav i:hover{
+    background-color: rgb(37, 37, 37);
+}
+
+/* User CSS */
+.user{
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    column-gap: 7px;
+    padding: 5px 6px 2px 7px;
+    border-radius:15px ;
+    margin-bottom: 6px;
+    cursor: pointer;
+}
+.bi-person-circle{
+    font-size: 20px;
+}
+.user_options{
+    z-index: 3;
+    display: none;
+    font-size: 13px;
+    position: relative;
+    color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.user_opt_list{
+    width: 180px;
+    border-radius: 5px;
+    position: absolute;
+    top: 0;
+    right: 1px;
+    background-color:  rgb(40, 40, 40);
+    padding: 8px 10px 8px 10px;
+}
+.user_opt_list li{
+    padding: 8px 0px 8px 10px;
+    cursor: pointer;
+}
+.user_opt_list a{
+    text-decoration: none;
+    color: white;
+}
+.user_opt_list li:hover{
+    background-color: rgb(104,104,104);
+}
+.user_opt_list hr{
+    background-color: rgb(105, 105, 105);
+    border: 0;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    height: 1px;
+}
+
+/* Serach Bar Area */
+.search_bar{
+    width: 400px;
+}
+.search_bar input{
+    background-image: url('https://endlessicons.com/wp-content/uploads/2012/12/search-icon-614x460.png');
+    background-size: 16%;
+    font-size: 14px;
+    background-repeat: no-repeat;
+    background-position: left;
+    border-radius: 30px;
+    border: 1px solid black;
+    padding-left: 55px;
+    width: 350px;
+    height: 38px;
+}
+.search_bar input:focus{
+    outline: none;
+    border: 1px solid black;
+}
+.blank{
+    width: 400px;
+}
+
+
+/* CSS for full screen */
+@media screen and (min-height:790px){
+    .nav{
+        padding-bottom: 10px;
+    }
+}

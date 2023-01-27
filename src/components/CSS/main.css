@@ -1,0 +1,234 @@
+/* Main */
+.main{
+    background-color: rgba(18,19,19,255);
+    color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    height:91.5%;
+    overflow-y: scroll;
+}
+.main::-webkit-scrollbar{
+    background: transparent;
+    width: 10px;
+}
+.main::-webkit-scrollbar-thumb{
+    background-color:slategray;
+}
+#wish{
+    margin-top: 15px;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+/* Album */
+.album{
+    background-image: linear-gradient(180deg,rgba(28,14,67,255),rgba(18,19,19,255));
+    padding: 10px 20px 10px 55px;
+}
+
+.albumflex{
+    display: flex;
+    column-gap: 25px;
+}
+
+.topbox_img{
+    width: 75px;
+    height: 75px;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+.topbox{
+    display: flex;
+    height: 75px;
+    width: 380px;
+    border-radius: 4px;
+    background-color:rgba(47,39,63,255);
+    cursor: pointer;
+    transition-property: background-color;
+    transition-duration: 0.1s;
+}
+.topbox:hover{
+    background-color:rgb(45, 30, 46);
+}
+.topbox_text{
+    position: relative;
+    padding: 31px 4px 15px 20px;
+}
+#likedalbum{
+    font-size: 23px;
+    padding: 27px 25px 6px 27px;
+    border-radius: 0px;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+
+
+/* General Box */
+.heading{
+    width: 280px;
+    font-size: 25px;
+    font-weight: bold;
+}
+.allopt{
+    margin-top: 5px;
+    font-size: 13px;
+    color: lightgray;
+    cursor: pointer;
+}
+.genbox{
+    padding: 15px;
+    border-radius: 7px;
+    height: 240px;
+    width: 172px;
+    background-color: rgb(27, 26, 26);
+}
+.genbox_img{
+    border-radius: 7px;
+    height: 170px;
+    width: 170px;
+}
+.genbox_text1{
+    font-size: 15px;
+    font-weight: bolder;
+    position: relative;
+    padding: 9px 3px 5px 0px;
+}
+.genbox_text2{
+    position: relative;
+    color: lightgrey;
+    font-size: 11px;
+    padding: 3px 3px 5px 2px;
+}
+.genbox_main{
+    padding: 25px 20px 5px 55px;
+    width:77vw ;
+    height: 330px;
+}
+.genbox_flex{
+    display: flex;
+    column-gap: 35px;
+    overflow-x: scroll;
+}
+.genbox_flex::-webkit-scrollbar{
+    display: none;
+}
+.cover_box{
+    position: relative;
+    left: 5px;
+}
+.artist_cover{
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    background-color: none;
+    border-radius: 7px;
+    height: 270px;
+    width: 204px;
+    cursor: pointer;
+}
+.music_cover{
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    background-color: none;
+    border-radius: 7px;
+    height: 270px;
+    width: 204px;
+    cursor: pointer;
+}
+
+.artist{
+    border-radius: 120px;
+}
+.artisttext{
+    font-size: 18px;
+    margin-top: 6px;
+}
+
+.playicon_design{
+    display: none;
+    opacity: 0;
+    left: 125px;
+    bottom: 87px;
+    height: 55px;
+    width: 55px;
+    color: black;
+    position: absolute;
+    z-index: 3;
+    transform: translateY(10px);
+}
+
+.playicon_design2{
+    display: none;
+    opacity: 0;
+    left: 115px;
+    top: 10px;
+    height: 55px;
+    width: 55px;
+    color: black;
+    position: relative;
+    z-index: 3;
+    transform: translateY(10px);
+}
+
+/* Animate play icon */
+.animateicon{
+    animation: moveup 0.4s both;
+}
+@keyframes moveup {
+    0%{
+        opacity: 0;
+        transform: translateY(6px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0px)
+    }
+}
+
+.animateicon2{
+    animation: moveup2 0.4s both;
+}
+@keyframes moveup2 {
+    0%{
+        opacity: 0;
+        transform: translateX(6px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0px)
+    }
+}
+
+/* Error Div */
+.error_div{
+    background-image: linear-gradient(180deg,rgba(28,14,67,255),rgba(18,19,19,255));
+    color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    height:91.5%;
+    display: none;
+}
+
+.error_div i{
+    position: relative;
+    color:white;
+    top: 20vh;
+    left:35vw;
+    font-size: 100px;
+}
+.error_div div{
+    position: relative;
+    color:white;
+    font-weight: bolder;
+    top: 24vh;
+    left:24vw;
+    font-size: 23px;
+    height: 50px;
+    width: 500px;
+}
+
+/* CSS for full screen */
+@media screen and (min-height:790px){
+    .main{
+        height: 92.2%;
+    }
+}
