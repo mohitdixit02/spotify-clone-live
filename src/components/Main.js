@@ -280,7 +280,7 @@ const Main = (props) => {
                         }
                         return (
                             <div className="genbox_main" key={index}>
-                                <div style={{ 'display': 'flex', 'margin': '10px 0px 18px 10px', 'columnGap': '26vw' }}>
+                                <div className='heading_holder_main'>
                                     <div className='heading'>{genere_key.genere}</div><br />
                                     <div className="allopt" id={genere_key.genere} onClick={(e) => { showCategory(e.target.id) }}>SEE ALL</div>
                                 </div>

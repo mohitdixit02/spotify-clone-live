@@ -11,25 +11,20 @@
 }
 .leftdx{
     margin: 20px;
-    font-size: 14px;
-}
-.left1{
-    display: flex;
-    column-gap: 16px;
 }
 .left1 ul li span{
     font-style: normal;
-    font-size: 15px;
-    padding-left: 14px;
+    font-size: 1rem;
+    padding-left: 0.95rem;
     bottom: 3px;
     position: relative;
 }
 .left1 ul li i{
-    font-size: 24px;
+    font-size: 1.52rem;
 }
 .left1 ul li{
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 0.7rem;
+    padding-bottom: 0.7rem;
     cursor: pointer;
 }
 .left1 ul li:hover{
@@ -39,8 +34,8 @@
     padding: 25px 5px 8px 16px;
 }
 .left_logo img{
-    height: 41px;
-    width: 145px;
+    height: 2.6rem;
+    width: 9.4rem;
 }
 
 .hr{
@@ -50,10 +45,8 @@
 }
 
 .left2{
-    margin-top: 30px;
-    font-size: 16px;
-    display: flex;
-    column-gap: 16px;
+    margin-top: 50px;
+    font-size: 1rem;
 }
 .left2 ul li{
     margin: 18px 0px 18px 0px;
@@ -81,14 +74,14 @@
 
 
 .bi-plus{
-    font-size: 22px;
+    font-size: 1.47rem;
     background-color: rgb(177, 177, 177);
     color: black;
     border-radius: 2px;
 }
 .likedheart{
     background-image: linear-gradient(120deg,rgb(0, 0, 179),white);
-    font-size: 12px;
+    font-size: 0.75rem;
     border-radius: 2px;
     padding: 6px;
     color: white;
@@ -101,7 +94,7 @@
 /* Playlist Section CSS */
 .playlist_section{
     margin-top: 15px;
-    font-size: 14px;
+    font-size: 0.8rem;
     cursor: pointer;
     color: rgb(135, 135, 135);
 }
@@ -138,3 +131,11 @@
 .bi-x:hover{
     color:white;
 }
+
+
+
+/* Responsiveness */
+/* 1171px */
+/* @media screen and (max-width:;) {
+    
+} */
