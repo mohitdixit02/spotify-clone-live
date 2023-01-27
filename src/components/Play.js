@@ -41,7 +41,7 @@ export default function Play(props) {
     setPlaystate(false);
     song_current.current.pause();
     let tempsong = tracklist[index];
-    song_current.current = new Audio(`${tempsong['song_source']}`);
+    song_current.current = new Audio(backend_url+`${tempsong['song_source']}`);
     song_current.current.play();
     setPlaystate(true);
     setCurrent_track(tracklist[index]);
