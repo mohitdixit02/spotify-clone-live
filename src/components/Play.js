@@ -29,7 +29,7 @@ export default function Play(props) {
       // console.log((song_current.current.src != (window.location.href)+'undefined') && (song_current.current.src != (window.location.href)))
       song_current.current.pause();
       let tempsong = tracklist[0];
-      song_current.current = new Audio(`${tempsong['song_source']}`);
+      song_current.current = new Audio(backend_url+`${tempsong['song_source']}`);
       setPlaystate(true);
       setIndex(0);
       setCurrent_track(tracklist[0]);
