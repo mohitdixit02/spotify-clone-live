@@ -5,11 +5,12 @@ import p from '../media/playicon.jpg'
 import conv from '../service component/time_conv'
 import { ref, set, onValue, remove } from "firebase/database"
 import database from '../Firebase/Firebase'
+import {backend_url} from '../service component/url_info'
 
 function Likedsongs(props) {
     //Playlist Owner
     const [name, SetName] = useState('');
-    axios.get('/user/getuser').then((response) => {
+    axios.get(backend_url+'/user/getuser').then((response) => {
         const resp = response.data[0];
         SetName(resp['first_name']);
     })
@@ -96,7 +97,7 @@ function Likedsongs(props) {
             if (k.className == 'bi bi-heart') {
                 k.className = 'bi bi-heart-fill heart_icon';
                 //Setting data
-                axios.get(`/req_data/${icon_id}`).then((response) => {
+                axios.get(backend_url+`/req_data/${icon_id}`).then((response) => {
                     const data = response.data[0];
                     set(ref(database, 'users/' + user + '/liked/' + icon_id + '/'), {
                         song: data
@@ -196,7 +197,7 @@ function Likedsongs(props) {
                                             <tr key={index} id={element.id} className='likedlist2_active' onClick={playsongtd}>
                                                 <td style={{ 'textAlign': 'center', 'borderTopLeftRadius': '5px', 'borderBottomLeftRadius': '5px' }} id={`${element.id} index`} className='likedtd index_class'>{index + 1}</td>
                                                 <td id={element.id} style={{ 'display': 'flex' }} className='likedtd'>
-                                                    <img src={`${element.song_img}`} className='likedtd_img' />
+                                                    <img src={backend_url + `${element.song_img}`} className='likedtd_img' />
                                                     <div id={element.id} className='likedtd_div'>
                                                         <span className='liked_span_class' id={`${element.id} name`}>{element.name}</span>
                                                         {element.artist}

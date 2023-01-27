@@ -74,7 +74,7 @@ function User(props) {
     //Artist Info function
     function viewProfile() {
       try {
-        axios.get('/user/fulluser').then((response) => {
+        axios.get(backend_url+'/user/fulluser').then((response) => {
           navigate('/profile', {
             state: {
               'data': response.data[0],

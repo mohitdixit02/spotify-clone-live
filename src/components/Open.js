@@ -2,6 +2,7 @@ import './CSS/Open.css'
 import p from './media/playicon.jpg'
 import tick from './media/tick.jpg'
 import { useLocation } from 'react-router-dom'
+import { backend_url } from './service component/url_info'
 import axios from 'axios'
 import OpenSonglist from './OpenSonglist'
 
@@ -25,7 +26,7 @@ const Open = (props) => {
                     'height': '300px',
                 }}></div>
                 <div className='open_top_heading'>
-                    <img src={`${temp.song_img}`} style={{
+                    <img src={backend_url + `${temp.song_img}`} style={{
                         'height': '235px',
                         'width': '235px',
                         'padding': '0px 20px 20px 45px ',
@@ -74,7 +75,7 @@ const Open = (props) => {
                     'height': '300px',
                 }}></div>
                 <div className='open_top_heading'>
-                    <img src={`${artist_info.artist_img}`} style={{
+                    <img src={backend_url + `${artist_info.artist_img}`} style={{
                         'height': '220px',
                         'width': '220px',
                         'marginTop':'20px',
@@ -104,7 +105,7 @@ const Open = (props) => {
                         <br />
                         <div className="aboutflex">
                         <div style={{'height':'450px','width':'800px','overflow':'hidden'}}>
-                        <img src={`${artist_info.about_img}`} className='aboutimg'/>
+                        <img src={backend_url + `${artist_info.about_img}`} className='aboutimg'/>
                         </div>
                         <div style={{'paddingTop':'30px'}}>
                             <div style={{'fontSize':'22px', 'fontWeight':'bold'}}>{listn} Monthly Listeners</div> <br /> <br />
@@ -150,7 +151,7 @@ const Open = (props) => {
                     'height': '300px',
                 }}></div>
                 <div className='open_top_heading'>
-                    <img src={`${temp.song_img}`} style={{
+                    <img src={backend_url + `${temp.song_img}`} style={{
                         'height': '235px',
                         'width': '235px',
                         'padding': '0px 20px 20px 45px ',

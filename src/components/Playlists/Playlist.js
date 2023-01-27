@@ -8,13 +8,14 @@ import axios from 'axios';
 import database from '../Firebase/Firebase'
 import { ref, set } from 'firebase/database'
 import OpenSonglist from '../OpenSonglist'
+import {backend_url} from '../service component/url_info'
 
 function Playlist(props) {
     //Playlist Owner
     const [name, SetName] = useState('User');
     useEffect(() => {
         try {
-            axios.get('/user/getuser').then((response) => {
+            axios.get(backend_url+'/user/getuser').then((response) => {
                 const resp = response.data[0];
                 SetName(resp['first_name']);
             })
@@ -76,7 +77,7 @@ function Playlist(props) {
         if (value != '') {
             try {
                 k[0].style.display = 'block';
-                axios.get(`/req_data/search/${value}`).then((response) => {
+                axios.get(backend_url+`/req_data/search/${value}`).then((response) => {
                     setSearchsongData(response.data['song']);
                 })
             } catch { }
@@ -137,7 +138,7 @@ function Playlist(props) {
         set(ref(database, 'users/' + user + '/playlist/' + url + '/data/'), data);
     }
     async function Add_to_playlist(value) {
-        axios.get(`/req_data/${value}`).then((response) => {
+        axios.get(backend_url+`/req_data/${value}`).then((response) => {
             const data = response.data[0];
             let temp = song_data;
             temp.push(data);
@@ -224,7 +225,7 @@ function Playlist(props) {
                                             <tr id={song.id} key={'search_' + song.name} className='songlist_search_active'>
                                                 <td style={{ 'textAlign': 'center', 'borderTopLeftRadius': '5px', 'borderBottomLeftRadius': '5px', 'width': '7%' }} className='songtd index_class' id={`${song.id} index`}>{index + 1}</td>
                                                 <td id={song.id} style={{ 'display': 'flex', 'width': '95%' }} className='songtd'>
-                                                    <img src={`${song.song_img}`} className='songtdsearch_img' />
+                                                    <img src={backend_url + `${song.song_img}`} className='songtdsearch_img' />
                                                     <div id={song.id} className='songtdsearch_div'>
                                                         <span className='spansearch_class' id={`${song.id} name`}>{song.name}</span>
                                                         {song.artist}

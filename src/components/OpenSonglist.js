@@ -4,6 +4,7 @@ import database from './Firebase/Firebase'
 import './CSS/Open.css'
 import conv from './service component/time_conv'
 import axios from 'axios'
+import {backend_url} from './service component/url_info'
 
 function OpenSonglist(props) {
     const song = props.songlist;
@@ -36,7 +37,7 @@ function OpenSonglist(props) {
             if (k.className == 'bi bi-heart') {
                 k.className = 'bi bi-heart-fill heart_icon';
                 //Setting data
-                axios.get(`/req_data/${icon_id}`).then((response) => {
+                axios.get(backend_url+`/req_data/${icon_id}`).then((response) => {
                     const data = response.data[0];
                     set(ref(database, 'users/' + user + '/liked/' + icon_id + '/'), {
                         song: data
@@ -174,7 +175,7 @@ function OpenSonglist(props) {
                                         <tr key={index} id={element.id} className='songlist2_active' onClick={playsongtd}>
                                             <td style={{ 'textAlign': 'center', 'borderTopLeftRadius': '5px', 'borderBottomLeftRadius': '5px' }} id={`${element.id} index`} className='songtd index_class'>{index + 1}</td>
                                             <td id={element.id} style={{ 'display': 'flex' }} className='songtd'>
-                                                <img src={`${element.song_img}`} className='songtd_img' />
+                                                <img src={backend_url + `${element.song_img}`} className='songtd_img' />
                                                 <div id={element.id} className='songtd_div'>
                                                     <span className='span_class' id={`${element.id} name`}>{element.name}</span>
                                                     {element.artist}
@@ -216,7 +217,7 @@ function OpenSonglist(props) {
                                         <tr key={index} id={element.id} className='songlist2_active' onClick={playsongtd}>
                                             <td style={{ 'textAlign': 'center', 'borderTopLeftRadius': '5px', 'borderBottomLeftRadius': '5px' }} id={`${element.id} index`} className='songtd index_class'>{index + 1}</td>
                                             <td id={element.id} style={{ 'display': 'flex' }} className='songtd'>
-                                                <img src={`${element.song_img}`} className='songtd_img' />
+                                                <img src={backend_url + `${element.song_img}`} className='songtd_img' />
                                                 <div id={element.id} className='songtd_div'>
                                                     <span className='span_class' id={`${element.id} name`}>{element.name}</span>
                                                     {element.artist}
