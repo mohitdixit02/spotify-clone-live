@@ -3,7 +3,7 @@
     color: lightgray;
     display: flex;
     column-gap: 40vw;
-    width: 81vw;
+    width:auto;
     height: 37px;
     padding: 15px 5px 4.8px 45px;
 }
@@ -101,7 +101,7 @@
     border: 1px solid black;
 }
 .blank{
-    width: 400px;
+    width: 26vw;
 }
 
 
@@ -109,5 +109,67 @@
 @media screen and (min-height:790px){
     .nav{
         padding-bottom: 10px;
+    }
+}
+
+/* ResponsiveCSS */
+@media screen and (max-width:1262px){
+    .nav{
+        column-gap: 35vw;
+    }
+    .bttn_nav i{
+        padding: 8px 6px 0px 6px;
+        font-size: 18px;
+    }
+    .bi-person-circle{
+        font-size: 16px;
+    }
+    .user{
+        column-gap: 7px;
+        padding: 3px 6px 2px 7px;
+        border-radius:15px ;
+        margin-bottom: 8px;
+    }
+}
+@media screen and (max-width:1047px) {
+    .nav{
+        column-gap: 24vw;
+    }
+    .user{
+        padding: 4px 6px 2px 7px;
+    }
+    .user_options{
+        font-size: 18px;
+    }
+}
+@media screen and (max-width:887px) {
+    .nav{
+        column-gap: 20vw;
+    }
+    .user{
+        margin-top: 8px;
+        padding: 4px 6px 2px 7px;
+    }
+}
+@media screen and (max-width:747px) {
+    .nav{
+        width: auto;
+        column-gap: 38vw;
+    }
+}
+@media screen and (max-width: 561px) {
+    .nav{
+        width: auto;
+        column-gap: 32vw;
+    }
+}
+@media screen and (max-width:488px) {
+    .nav{
+        column-gap: 28vw;
+    }
+}
+@media screen and (max-width:412px) {
+    .nav{
+        column-gap: 18vw;
     }
 }

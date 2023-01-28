@@ -3,8 +3,9 @@
     background-color: rgba(18,19,19,255);
     color: white;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    height:91.5%;
+    height:91.7%;
     overflow-y: scroll;
+    width: auto;
 }
 .main::-webkit-scrollbar{
     background: transparent;
@@ -106,12 +107,15 @@
 .genbox_main{
     padding: 25px 20px 5px 55px;
     width:74.5rem ;
-    height: 21rem;
+    height: 330px;
+    overflow-x: hidden;
+    overflow-y: hidden;
 }
 .genbox_flex{
     display: flex;
     column-gap:2.2rem;
     overflow-x: scroll;
+    overflow-y: hidden;
 }
 .genbox_flex::-webkit-scrollbar{
     display: none;
@@ -233,9 +237,149 @@
     width: 500px;
 }
 
+
+
 /* CSS for full screen */
 @media screen and (min-height:790px){
     .main{
         height: 92.2%;
+    }
+}
+
+/* Responsive CSS */
+@media screen and (max-width:1313px) {
+    .heading_holder_main{
+        column-gap: calc(11vw/0.5)
+    }
+}
+@media screen and (max-width:1259px) {
+    .albumflex{
+        column-gap: 15px;
+    }
+    .topbox_img{
+        width: 63px;
+        height: 62px;
+    }
+    .topbox{
+        height: 62px;
+        width: calc(12vw*2);
+    }
+    #likedalbum{
+        font-size: 21px;
+        padding: 21px 20px 11px 21px;
+    }
+    .topbox_text{
+        font-size: 12px;
+        padding: 22px 5px 2px 18px;
+    }
+    #wish{
+        font-size: 22px;
+    }
+
+    /* general box */
+    .heading_holder_main{
+        column-gap: calc(9.5vw/0.5)
+    }
+    .genbox{
+        height:210px;
+        width: 140px;
+    }
+    .genbox_img{
+        height: 135px;
+        width: 138px;
+    }
+    .genbox_text1{
+        font-size: 13px;
+    }
+    .genbox_text2{
+        font-size: 10px;
+    }
+    .genbox_main{
+        width:68.5rem;
+    }
+    .genbox_flex{
+        display: flex;
+        column-gap:2.2rem;
+    }
+}
+@media screen and (max-width:1047px) {
+    .topbox{
+        width: calc(11.3vw*2);
+    }
+    .heading_holder_main{
+        column-gap: calc(32vw*0.5)
+    }
+    .genbox_main{
+        padding: 25px 15px 5px 35px;
+        width:67rem;
+    }
+}
+@media screen and (max-width:887px) {
+    .respndiv_album{
+        margin-top: 18px;
+        display: flex;
+        column-gap: 15px;
+    }
+    .albumflex{
+        flex-direction: column;
+        row-gap: 15px;
+    }
+    .topbox{
+        width: calc(15.2vw*2);
+    }
+    .heading_holder_main{
+        column-gap: calc(19.6vw*0.5)
+    }
+    .genbox_main{
+        width:62rem;
+    }
+}
+@media screen and (max-width:747px) {
+    .main{
+        width: 100vw;
+    }
+    .topbox{
+        width: calc(21vw*2);
+    }
+    .heading_holder_main{
+        column-gap: calc(38vw*0.5)
+    }
+    .genbox_main{
+        width:84rem;
+    }
+}
+@media screen and (max-width:675px) {
+    .topbox{
+        width: calc(19vw*2);
+    }
+    .heading_holder_main{
+        column-gap: calc(28vw*0.5)
+    }
+    .album{
+        padding-left: 35px;
+    }
+    .genbox_main{
+        padding: 25px 15px 5px 25px;
+        width:80rem;
+    }
+}
+@media screen and (max-width:604px) {
+    .heading_holder_main{
+        column-gap: calc(22vw*0.5)
+    }
+}
+@media screen and (max-width:546px) {
+    .heading_holder_main{
+        column-gap: calc(14vw*0.5)
+    }
+}
+@media screen and (max-width:488px) {
+    .heading_holder_main{
+        column-gap: calc(12vw*0.5)
+    }
+}
+@media screen and (max-width:412px) {
+    .heading_holder_main{
+        column-gap: 0vw;
     }
 }

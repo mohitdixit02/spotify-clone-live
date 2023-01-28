@@ -90,7 +90,7 @@ function User(props) {
         <div>
           <div className="user" onClick={userBox}>
             <i className="bi bi-person-circle"></i>
-            <span style={{ 'position': 'relative', 'top': '1.5px' }}>{displayuser}</span>
+            <span style={{ 'position': 'relative', 'top': '1.5px','fontSize':'11px' }}>{displayuser}</span>
             <i style={{ 'position': 'relative', 'top': '3px' }} className="bi bi-caret-down-fill"></i>
           </div>
           <div className="user_options" onMouseLeave={() => blur_user()} >
@@ -108,7 +108,7 @@ function User(props) {
         <div>
           <div className="user" onClick={userBox}>
             <i className="bi bi-person-circle"></i>
-            <span style={{ 'position': 'relative', 'top': '1.5px' }}>
+            <span style={{ 'position': 'relative', 'top': '1.5px', 'fontSize':'11px' }}>
               {/* {displayuser} */}
               </span>
             <i style={{ 'position': 'relative', 'top': '3px' }} className="bi bi-caret-down-fill"></i>

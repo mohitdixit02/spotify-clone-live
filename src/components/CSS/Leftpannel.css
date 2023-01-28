@@ -46,7 +46,6 @@
 
 .left2{
     margin-top: 50px;
-    font-size: 1rem;
 }
 .left2 ul li{
     margin: 18px 0px 18px 0px;
@@ -56,6 +55,7 @@
     margin-left: 13px;
     color: lightgray;
     cursor: pointer;
+    font-size: 1rem;
 }
 #create span{
     position: relative;
@@ -135,7 +135,40 @@
 
 
 /* Responsiveness */
-/* 1171px */
-/* @media screen and (max-width:;) {
-    
-} */
+@media screen and (max-width:1259px) {
+    .left1 ul li span{
+        font-size: 13px;
+        padding-left: 12px;
+    }
+    .left1 ul li i{
+        font-size: 18px;
+    }
+    .leftpannel{
+        width: 230px;
+    }
+    .left1 ul li{
+        padding-top: 9px;
+        padding-bottom: 9px;
+    }
+    .left2 ul li span{
+        font-size: 12.5px;
+    }
+    .left_logo img{
+        height: 32px;
+        width: 115px;
+    }
+    .hr{
+        width: 130px;
+    }
+    .bi-plus{
+        font-size: 20px;
+    }
+    .likedheart{
+        font-size: 9px;
+    }
+}
+@media screen and (max-width:747px) {
+    .leftpannel{
+        display: none;
+    }
+}

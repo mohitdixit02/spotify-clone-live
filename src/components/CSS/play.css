@@ -1,18 +1,19 @@
 .play {
   background-color: rgba(25, 25, 24, 255);
-  width: 100%;
+  width: auto;
   height: 12vh;
   display: flex;
   color: lightgrey;
-  column-gap: 8vw;
+  column-gap: 7.7rem;
 }
 /* left */
 .left {
   padding: 10px;
   display: flex;
   height: 9vh;
-  width: 345px;
+  width: 22rem;
   cursor: pointer;
+  overflow: hidden;
 }
 #playtext {
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
@@ -53,7 +54,7 @@
   border-radius: 4px;
   position: relative;
   top: 0px;
-  width: 85%;
+  width: 32rem;
 }
 #ctime {
   position: relative;
@@ -100,7 +101,7 @@
   justify-content: center;
   padding-top: 33px;
   column-gap: 15px;
-  margin-left: 6.5vw;
+  margin-left: 5.5rem;
 }
 #volume_slider {
   position: relative;
@@ -118,19 +119,19 @@
   font-size: 16px;
 }
 
-input[type='range']{
-    cursor: pointer;
+input[type="range"] {
+  cursor: pointer;
 }
 
 /* CSS for full screen */
-@media screen and (min-height:790px){
+@media screen and (min-height: 790px) {
   .left img {
     padding-top: 10px;
     height: 70px;
     width: 70px;
     transition: all 0.4s;
   }
-  .left{
+  .left {
     width: 280px;
   }
   #playtext {
@@ -141,12 +142,176 @@ input[type='range']{
     color: lightgray;
     font-size: 11px;
   }
-  .middle{
+  .middle {
     padding-top: 14px;
     transition: all 0.4s;
   }
-  .right{
+  .right {
     padding-top: 42px;
     transition: all 0.4s;
+  }
+}
+
+/* Responsive CSS */
+@media screen and (max-width: 1419px) {
+  .left {
+    width: 18rem;
+  }
+  #playtext {
+    font-size: 12px;
+  }
+  #artist {
+    font-size: 9px;
+  }
+  .progress_bar {
+    width: 27rem;
+  }
+  .right {
+    margin-left:4rem;
+  }
+}
+@media screen and (max-width: 1052px) {
+  .left {
+    width: 18rem;
+  }
+  #playtext {
+    font-size: 12px;
+  }
+  #artist {
+    font-size: 9px;
+  }
+  .progress_bar {
+    width: 26rem;
+  }
+  .right {
+    margin-left: 4rem;
+  }
+  #volume_slider {
+    top: 2px;
+    width: 70%;
+  }
+}
+@media screen and (max-width: 824px) {
+  .play {
+    column-gap: 4rem;
+  }
+  .left {
+    width: 22rem;
+  }
+  #playtext {
+    font-size: 11px;
+  }
+  #artist {
+    font-size: 7px;
+  }
+  .left img {
+    padding-top: 8px;
+    height: 50px;
+    width: 50px;
+  }
+  .progress_bar {
+    width: 24.5rem;
+    height: 3px;
+  }
+  .right {
+    margin-left: 4rem;
+  }
+  #volume_slider {
+    top: 4px;
+    width: 60%;
+  }
+  #playtext {
+    font-size: 13px;
+  }
+
+  /* bttns */
+  .bttns {
+    column-gap: 15px;
+    margin-left: 10px;
+  }
+  #ctime {
+    font-size: 11px;
+  }
+  #ttime {
+    font-size: 11px;
+  }
+  #playbttn {
+    padding-top: 9px;
+    font-size: 30px;
+  }
+  #skipstart {
+    padding-top: 15px;
+    font-size: 22px;
+  }
+  #skipend {
+    padding-top: 15px;
+    font-size: 22px;
+  }
+  #shuffle {
+    padding-top: 20px;
+    font-size: 13px;
+  }
+  #repeat {
+    padding-top: 21px;
+    font-size: 13px;
+  }
+}
+@media screen and (max-width: 675px) {
+  .left {
+    width: 24rem;
+  }
+  #playtext {
+    margin-top: 5px;
+    font-size: 10px;
+  }
+  .left img {
+    padding-top: 16px;
+    height: 40px;
+    width: 40px;
+  }
+  #volume_slider {
+    display: none;
+  }
+  .progress_bar {
+    width: 132px;
+    height: 3px;
+  }
+  .right {
+    margin-left: 6rem;
+  }
+}
+@media screen and (max-width: 561px) {
+  .left {
+    width: 24rem;
+  }
+  #playtext {
+    font-size: 10px;
+  }
+  .left img {
+    padding-top: 16px;
+    height: 40px;
+    width: 40px;
+  }
+  #volume_slider {
+    display: none;
+  }
+  .right {
+    margin-left: 6rem;
+  }
+}
+@media screen and (max-width:412px) {
+  .left {
+    width: 22rem;
+  }
+  .progress_bar {
+    width: 80px;
+    height: 3px;
+  }
+  #playtext {
+    margin-top: 0px;
+    font-size: 9px;
+  }
+  .right {
+    margin-left: 4rem;
   }
 }

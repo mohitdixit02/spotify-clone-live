@@ -118,10 +118,12 @@ function Audiocontrols(props) {
           <i className="bi bi-skip-end-fill" id='skipend' onClick={nextSong}></i>
           <i className="bi bi-repeat" id='repeat' onClick={repeat_function}></i>
         </div>
+        <div style={{'display':'flex','justifyContent':'center'}}>
         <div className="slider">
           <span id='ctime'>{update_time}</span>
           <input type="range" step='1' className='progress_bar' min={0} max={props.original_duration} value={props.progress} onChange={(e)=>onScrub(e.target.value)} onMouseUp={(e)=>onScrubend(e.target.value)} />
           <span id='ttime'>{props.duration}</span>
+        </div>
         </div>
       </div>
     )

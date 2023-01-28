@@ -32,7 +32,7 @@ const Main = (props) => {
         let play_id = e.target.id;
         play_id = play_id.substr(0, play_id.length - 5);
         try {
-            axios.get(backend_url+`/req_data/${play_id}`).then((response) => {
+            axios.get(backend_url + `/req_data/${play_id}`).then((response) => {
                 trackfn([response.data[0]]);
             })
         } catch { }
@@ -116,7 +116,7 @@ const Main = (props) => {
         let play_id = e.target.id;
         play_id = play_id.substr(0, play_id.length - 5);
         try {
-            axios.get(backend_url+`/req_data/artist/${play_id}`).then((response) => {
+            axios.get(backend_url + `/req_data/artist/${play_id}`).then((response) => {
                 let temp = response.data[0]
                 trackfn(temp['artist_song_list']);
             })
@@ -144,7 +144,7 @@ const Main = (props) => {
         //                 }
         //             }
         //             setData(song_data);
-                    
+
         //             // sending data
         //             alert('navg target')
         //             console.log(e.target);
@@ -218,56 +218,58 @@ const Main = (props) => {
             <div className='main'>
                 <div className='album'>
                     <div id='wish'>{ctime}</div><br />
-                    <div className="albumflex">
-                        <Link style={{'textDecoration':'none','color':'white'}} to='/liked'>
-                        <div className="topbox" onMouseEnter={getelement_top} onMouseLeave={removeelement_top} id='liked songs'>
-                            <i className="bi bi-heart-fill likedheart" id='likedalbum' />
-                            <div className="topbox_text">
-                                Liked Songs
-                            </div>
-                            <img src={p} className='playicon_design' onClick={playaudio} />
+                    <div className="respndiv_album">
+                        <div className="albumflex">
+                            <Link style={{ 'textDecoration': 'none', 'color': 'white' }} to='/liked'>
+                                <div className="topbox" onMouseEnter={getelement_top} onMouseLeave={removeelement_top} id='liked songs'>
+                                    <i className="bi bi-heart-fill likedheart" id='likedalbum' />
+                                    <div className="topbox_text">
+                                        Liked Songs
+                                    </div>
+                                    <img src={p} className='playicon_design' onClick={playaudio} />
 
-                        </div></Link>
-                        <div className="topbox" onClick={getAlbum} id={'No Competition'}>
-                            <div>
-                                <img src={img_data['No Competition']} alt="Image" className="topbox_img" id={'No Competition'} />
+                                </div></Link>
+                            <div className="topbox" onClick={getAlbum} id={'No Competition'}>
+                                <div>
+                                    <img src={img_data['No Competition']} alt="Image" className="topbox_img" id={'No Competition'} />
+                                </div>
+                                <div className="topbox_text" id={'No Competition'}>
+                                    No Competition
+                                </div>
                             </div>
-                            <div className="topbox_text" id={'No Competition'}>
-                                No Competition
+                            <div className="topbox" id={'Rambo'} onClick={getAlbum}>
+                                <div>
+                                    <img src={img_data['Rambo']} alt="Image" className="topbox_img" id={'Rambo'} />
+                                </div>
+                                <div className="topbox_text" id={'Rambo'}>
+                                    Rambo
+                                </div>
                             </div>
-                        </div>
-                        <div className="topbox" id={'Rambo'} onClick={getAlbum}>
-                            <div>
-                                <img src={img_data['Rambo']} alt="Image" className="topbox_img" id={'Rambo'} />
+                        </div> <br />
+                        <div className="albumflex">
+                            <div className="topbox" onClick={artistinfo} id={'Karan Aujla'}>
+                                <div>
+                                    <img src={img_data['Karan Aujla']} alt="Image" className="topbox_img" id={'Karan Aujla'} />
+                                </div>
+                                <div className="topbox_text" id={'Karan Aujla'}>
+                                    Karan Aujla
+                                </div>
                             </div>
-                            <div className="topbox_text" id={'Rambo'}>
-                                Rambo
+                            <div className="topbox" onClick={musicinfo} id={2}>
+                                <div>
+                                    <img src={img_data["Braat"]} alt="Image" className="topbox_img" id={2} />
+                                </div>
+                                <div className="topbox_text" id={2}>
+                                    Braat
+                                </div>
                             </div>
-                        </div>
-                    </div> <br />
-                    <div className="albumflex">
-                        <div className="topbox" onClick={artistinfo} id={'Karan Aujla'}>
-                            <div>
-                                <img src={img_data['Karan Aujla']} alt="Image" className="topbox_img" id={'Karan Aujla'} />
-                            </div>
-                            <div className="topbox_text" id={'Karan Aujla'}>
-                                Karan Aujla
-                            </div>
-                        </div>
-                        <div className="topbox" onClick={musicinfo} id={2}>
-                            <div>
-                                <img src={img_data["Braat"]} alt="Image" className="topbox_img" id={2} />
-                            </div>
-                            <div className="topbox_text" id={2}>
-                                Braat
-                            </div>
-                        </div>
-                        <div className="topbox" onClick={musicinfo} id={10}>
-                            <div>
-                                <img src={img_data['Kesariya']} alt="Image" className="topbox_img" id={10} />
-                            </div>
-                            <div className="topbox_text" id={10}>
-                                Kesariya
+                            <div className="topbox" onClick={musicinfo} id={10}>
+                                <div>
+                                    <img src={img_data['Kesariya']} alt="Image" className="topbox_img" id={10} />
+                                </div>
+                                <div className="topbox_text" id={10}>
+                                    Kesariya
+                                </div>
                             </div>
                         </div>
                     </div>
