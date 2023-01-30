@@ -47,10 +47,12 @@
 .user_options{
     z-index: 3;
     display: none;
-    font-size: 13px;
     position: relative;
     color: white;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.user span{
+    font-size: 15px;
 }
 .user_opt_list{
     width: 180px;
@@ -64,6 +66,7 @@
 .user_opt_list li{
     padding: 8px 0px 8px 10px;
     cursor: pointer;
+    font-size: 12px;
 }
 .user_opt_list a{
     text-decoration: none;
@@ -135,11 +138,11 @@
     .nav{
         column-gap: 24vw;
     }
-    .user{
-        padding: 4px 6px 2px 7px;
+    .user_opt_list li{
+        font-size: 10px;
     }
-    .user_options{
-        font-size: 18px;
+    .user span{
+        font-size: 12px;
     }
 }
 @media screen and (max-width:887px) {
@@ -160,16 +163,16 @@
 @media screen and (max-width: 561px) {
     .nav{
         width: auto;
-        column-gap: 32vw;
+        column-gap: 28vw;
     }
 }
 @media screen and (max-width:488px) {
     .nav{
-        column-gap: 28vw;
+        column-gap: 26vw;
     }
 }
 @media screen and (max-width:412px) {
     .nav{
-        column-gap: 18vw;
+        column-gap: 17vw;
     }
 }

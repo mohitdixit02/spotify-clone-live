@@ -216,135 +216,137 @@ const Main = (props) => {
     return (
         <>
             <div className='main'>
-                <div className='album'>
-                    <div id='wish'>{ctime}</div><br />
-                    <div className="respndiv_album">
-                        <div className="albumflex">
-                            <Link style={{ 'textDecoration': 'none', 'color': 'white' }} to='/liked'>
-                                <div className="topbox" onMouseEnter={getelement_top} onMouseLeave={removeelement_top} id='liked songs'>
-                                    <i className="bi bi-heart-fill likedheart" id='likedalbum' />
-                                    <div className="topbox_text">
-                                        Liked Songs
-                                    </div>
-                                    <img src={p} className='playicon_design' onClick={playaudio} />
+                <div className="main_holder">
+                    <div className='album'>
+                        <div id='wish'>{ctime}</div><br />
+                        <div className="respndiv_album">
+                            <div className="albumflex">
+                                <Link style={{ 'textDecoration': 'none', 'color': 'white' }} to='/liked'>
+                                    <div className="topbox" onMouseEnter={getelement_top} onMouseLeave={removeelement_top} id='liked songs'>
+                                        <i className="bi bi-heart-fill likedheart" id='likedalbum' />
+                                        <div className="topbox_text">
+                                            Liked Songs
+                                        </div>
+                                        <img src={p} className='playicon_design' onClick={playaudio} />
 
-                                </div></Link>
-                            <div className="topbox" onClick={getAlbum} id={'No Competition'}>
-                                <div>
-                                    <img src={img_data['No Competition']} alt="Image" className="topbox_img" id={'No Competition'} />
+                                    </div></Link>
+                                <div className="topbox" onClick={getAlbum} id={'No Competition'}>
+                                    <div>
+                                        <img src={img_data['No Competition']} alt="Image" className="topbox_img" id={'No Competition'} />
+                                    </div>
+                                    <div className="topbox_text" id={'No Competition'}>
+                                        No Competition
+                                    </div>
                                 </div>
-                                <div className="topbox_text" id={'No Competition'}>
-                                    No Competition
+                                <div className="topbox" id={'Rambo'} onClick={getAlbum}>
+                                    <div>
+                                        <img src={img_data['Rambo']} alt="Image" className="topbox_img" id={'Rambo'} />
+                                    </div>
+                                    <div className="topbox_text" id={'Rambo'}>
+                                        Rambo
+                                    </div>
                                 </div>
-                            </div>
-                            <div className="topbox" id={'Rambo'} onClick={getAlbum}>
-                                <div>
-                                    <img src={img_data['Rambo']} alt="Image" className="topbox_img" id={'Rambo'} />
+                            </div> <br />
+                            <div className="albumflex">
+                                <div className="topbox" onClick={artistinfo} id={'Karan Aujla'}>
+                                    <div>
+                                        <img src={img_data['Karan Aujla']} alt="Image" className="topbox_img" id={'Karan Aujla'} />
+                                    </div>
+                                    <div className="topbox_text" id={'Karan Aujla'}>
+                                        Karan Aujla
+                                    </div>
                                 </div>
-                                <div className="topbox_text" id={'Rambo'}>
-                                    Rambo
+                                <div className="topbox" onClick={musicinfo} id={2}>
+                                    <div>
+                                        <img src={img_data["Braat"]} alt="Image" className="topbox_img" id={2} />
+                                    </div>
+                                    <div className="topbox_text" id={2}>
+                                        Braat
+                                    </div>
                                 </div>
-                            </div>
-                        </div> <br />
-                        <div className="albumflex">
-                            <div className="topbox" onClick={artistinfo} id={'Karan Aujla'}>
-                                <div>
-                                    <img src={img_data['Karan Aujla']} alt="Image" className="topbox_img" id={'Karan Aujla'} />
-                                </div>
-                                <div className="topbox_text" id={'Karan Aujla'}>
-                                    Karan Aujla
-                                </div>
-                            </div>
-                            <div className="topbox" onClick={musicinfo} id={2}>
-                                <div>
-                                    <img src={img_data["Braat"]} alt="Image" className="topbox_img" id={2} />
-                                </div>
-                                <div className="topbox_text" id={2}>
-                                    Braat
-                                </div>
-                            </div>
-                            <div className="topbox" onClick={musicinfo} id={10}>
-                                <div>
-                                    <img src={img_data['Kesariya']} alt="Image" className="topbox_img" id={10} />
-                                </div>
-                                <div className="topbox_text" id={10}>
-                                    Kesariya
+                                <div className="topbox" onClick={musicinfo} id={10}>
+                                    <div>
+                                        <img src={img_data['Kesariya']} alt="Image" className="topbox_img" id={10} />
+                                    </div>
+                                    <div className="topbox_text" id={10}>
+                                        Kesariya
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                {
-                    data.map((genere_key, index) => {
-                        let song_array = genere_key.list[0]
-                        if (song_array.length > 5) {
-                            song_array = song_array.slice(0, 5);
+                    {
+                        data.map((genere_key, index) => {
+                            let song_array = genere_key.list[0]
+                            if (song_array.length > 5) {
+                                song_array = song_array.slice(0, 5);
+                            }
+                            return (
+                                <div className="genbox_main" key={index}>
+                                    <div className='heading_holder_main'>
+                                        <div className='heading'>{genere_key.genere}</div><br />
+                                        <div className="allopt" id={genere_key.genere} onClick={(e) => { showCategory(e.target.id) }}>SEE ALL</div>
+                                    </div>
+                                    <div className="genbox_flex">
+                                        {
+                                            song_array.map((song_key) => {
+                                                return (
+                                                    <div key={song_key.id} className='cover_box'>
+                                                        <div className="genbox">
+                                                            <div>
+                                                                <img src={backend_url + `${song_key.song_img}`} alt="Image" className="genbox_img" />
+                                                            </div>
+                                                            <div className="genbox_text1">
+                                                                {song_key.name}
+                                                            </div>
+                                                            <div className="genbox_text2">
+                                                                {song_key.artist}
+                                                            </div>
+                                                        </div>
+                                                        <div className="music_cover" id={song_key.id} onMouseEnter={getelement} onMouseLeave={removeelement} onClick={musicinfo}>
+                                                            <img src={p} className='playicon_design' onClick={playaudio} id={`${song_key.id} play`} />
+                                                        </div>
+                                                    </div>
+                                                )
+                                            })
+                                        }
+                                    </div>
+                                </div>
+                            )
                         }
-                        return (
-                            <div className="genbox_main" key={index}>
-                                <div className='heading_holder_main'>
-                                    <div className='heading'>{genere_key.genere}</div><br />
-                                    <div className="allopt" id={genere_key.genere} onClick={(e) => { showCategory(e.target.id) }}>SEE ALL</div>
-                                </div>
-                                <div className="genbox_flex">
-                                    {
-                                        song_array.map((song_key) => {
-                                            return (
-                                                <div key={song_key.id} className='cover_box'>
-                                                    <div className="genbox">
-                                                        <div>
-                                                            <img src={backend_url + `${song_key.song_img}`} alt="Image" className="genbox_img" />
-                                                        </div>
-                                                        <div className="genbox_text1">
-                                                            {song_key.name}
-                                                        </div>
-                                                        <div className="genbox_text2">
-                                                            {song_key.artist}
-                                                        </div>
-                                                    </div>
-                                                    <div className="music_cover" id={song_key.id} onMouseEnter={getelement} onMouseLeave={removeelement} onClick={musicinfo}>
-                                                        <img src={p} className='playicon_design' onClick={playaudio} id={`${song_key.id} play`} />
-                                                    </div>
-                                                </div>
-                                            )
-                                        })
-                                    }
-                                </div>
-                            </div>
                         )
                     }
-                    )
-                }
-                <div className="genbox_main">
-                    <div style={{ 'display': 'flex', 'margin': '10px 0px 18px 10px', 'columnGap': '26vw' }}>
-                        <div className='heading'>Artist</div><br />
-                        <div className="allopt" onClick={showArtistlist}>SEE ALL</div>
-                    </div>
-                    <div className="genbox_flex">
-                        {
-                            artist.map((artist_key) => {
-                                let temp = artist_key[0];
-                                return (
-                                    <div key={temp.id} className='cover_box' >
-                                        <div className="genbox">
-                                            <div>
-                                                <img src={backend_url + `${temp.artist_img}`} alt="Image" className="genbox_img artist" />
+                    <div className="genbox_main">
+                        <div style={{ 'display': 'flex', 'margin': '10px 0px 18px 10px', 'columnGap': '26vw' }}>
+                            <div className='heading'>Artist</div><br />
+                            <div className="allopt" onClick={showArtistlist}>SEE ALL</div>
+                        </div>
+                        <div className="genbox_flex">
+                            {
+                                artist.map((artist_key) => {
+                                    let temp = artist_key[0];
+                                    return (
+                                        <div key={temp.id} className='cover_box' >
+                                            <div className="genbox">
+                                                <div>
+                                                    <img src={backend_url + `${temp.artist_img}`} alt="Image" className="genbox_img artist" />
+                                                </div>
+                                                <div className="genbox_text1 artisttext">
+                                                    {temp.name}
+                                                </div>
+                                                <div className="genbox_text2">Artist</div>
                                             </div>
-                                            <div className="genbox_text1 artisttext">
-                                                {temp.name}
+                                            <div className="artist_cover" id={temp.name} onMouseEnter={getelement} onMouseLeave={removeelement} onClick={artistinfo}>
+                                                <img src={p} className='playicon_design' id={`${temp.name} play`} onClick={artistPlay} />
                                             </div>
-                                            <div className="genbox_text2">Artist</div>
                                         </div>
-                                        <div className="artist_cover" id={temp.name} onMouseEnter={getelement} onMouseLeave={removeelement} onClick={artistinfo}>
-                                            <img src={p} className='playicon_design' id={`${temp.name} play`} onClick={artistPlay} />
-                                        </div>
-                                    </div>
-                                )
-                            })
-                        }
+                                    )
+                                })
+                            }
+                        </div>
                     </div>
+                    <br /> <br /> <br />
                 </div>
-                <br /> <br /> <br />
             </div>
             <div className='error_div'>
                 <i className="bi bi-emoji-frown"></i>
