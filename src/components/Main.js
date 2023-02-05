@@ -216,7 +216,6 @@ const Main = (props) => {
     return (
         <>
             <div className='main'>
-                <div className="main_holder">
                     <div className='album'>
                         <div id='wish'>{ctime}</div><br />
                         <div className="respndiv_album">
@@ -346,7 +345,6 @@ const Main = (props) => {
                         </div>
                     </div>
                     <br /> <br /> <br />
-                </div>
             </div>
             <div className='error_div'>
                 <i className="bi bi-emoji-frown"></i>
