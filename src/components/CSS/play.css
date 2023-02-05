@@ -208,7 +208,7 @@ input[type="range"] {
     font-size: 7px;
   }
   .left img {
-    padding-top: 8px;
+    padding-top: 20px;
     height: 50px;
     width: 50px;
   }
@@ -268,7 +268,7 @@ input[type="range"] {
     font-size: 10px;
   }
   .left img {
-    padding-top: 16px;
+    padding-top: 24px;
     height: 40px;
     width: 40px;
   }
@@ -285,13 +285,18 @@ input[type="range"] {
 }
 @media screen and (max-width: 561px) {
   .left {
-    width: 24rem;
+    width: 22rem;
+    flex-direction: column;
   }
   #playtext {
+    padding-top: 0;
+    padding-left: 0;
     font-size: 10px;
+    height:29px;
+    overflow-y: hidden;
   }
   .left img {
-    padding-top: 16px;
+    padding-top: 10px;
     height: 40px;
     width: 40px;
   }
@@ -301,20 +306,84 @@ input[type="range"] {
   .right {
     margin-left: 6rem;
   }
+  #ctime {
+    font-size: 9px;
+  }
+  #ttime {
+    font-size: 9px;
+  }
 }
-@media screen and (max-width:412px) {
+@media screen and (max-width:504px) {
   .left {
     width: 22rem;
+    flex-direction: column;
+  }
+  .left img {
+    padding-top: 16px;
+    height: 35px;
+    width: 35px;
   }
   .progress_bar {
     width: 80px;
     height: 3px;
   }
   #playtext {
-    margin-top: 0px;
-    font-size: 9px;
+    padding-top: 0;
+    padding-left: 0;
+    font-size: 10px;
+    height:30px;
+    overflow-y: hidden;
   }
   .right {
     margin-left: 4rem;
+  }
+}
+@media screen and (max-width:376px) {
+  .left {
+    width: 18rem;
+    flex-direction: column;
+  }
+  .left img {
+    padding-top: 20px
+  }
+  .progress_bar {
+    width: 80px;
+    height: 3px;
+  }
+  #playtext {
+    padding-top: 0;
+    padding-left: 0;
+    font-size: 8px;
+    height:19px;
+    overflow-y: hidden;
+  }
+  #artist{
+    font-size: 5px;
+  }
+  .right {
+    margin-left: 4rem;
+  }
+}
+
+@media screen and (max-width:367px) {
+  .left {
+    width: 16rem;
+    flex-direction: column;
+  }
+  .left img {
+    padding-top: 20px
+  }
+  .progress_bar {
+    width: 70px;
+    height: 3px;
+  }
+  #playtext {
+    display: none;
+  }
+  #artist{
+    display: none;
+  }
+  .right {
+    margin-left: 5rem;
   }
 }
