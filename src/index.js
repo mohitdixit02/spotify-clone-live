@@ -9,7 +9,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter 
-    // basename='/spotify-clone-live/'
+    basename='/spotify-clone-live/'
     >
     <App />
     </BrowserRouter>
