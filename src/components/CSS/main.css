@@ -5,7 +5,7 @@
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     overflow-y: scroll;
     padding-bottom: 20px;
-    height:75vh;
+    height:40vh;
     width: 100%;
 }
 .main::-webkit-scrollbar{
