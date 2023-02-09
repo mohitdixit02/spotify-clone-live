@@ -5,6 +5,7 @@
 }
 .top{
   display: flex;
-  height: 88%;
+  /* height: 88%; */
+  height: 68%;
   overflow-y: hidden;
 }
