@@ -25,7 +25,7 @@ function App() {
 
   return (
     <>
-      <div style={{ 'height': '100vh' }}>
+      <div className='app_body'>
         <Routes>
           <Route exact path='*' element={
             <div className='top'>
