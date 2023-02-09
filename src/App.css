@@ -13,8 +13,8 @@
 }
 
 /* mobile responsiveness */
-@media screen and (min-height:800px) {
+@media screen and (min-height:900px) {
   .app_body{
-    height: 60vh;
+    height: 70vh;
   }
 }
