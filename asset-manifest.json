@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/spotify-clone-live/static/css/main.05136c99.css",
-    "main.js": "/spotify-clone-live/static/js/main.d33b27df.js",
+    "main.css": "/spotify-clone-live/static/css/main.0d30bdd2.css",
+    "main.js": "/spotify-clone-live/static/js/main.db919847.js",
     "static/js/787.a19c38e9.chunk.js": "/spotify-clone-live/static/js/787.a19c38e9.chunk.js",
     "static/media/Rambo.jpg": "/spotify-clone-live/static/media/Rambo.20cfd5a6ff4a53a325c9.jpg",
     "static/media/Braat.jpg": "/spotify-clone-live/static/media/Braat.788d4ed63c51e0e8af03.jpg",
@@ -14,12 +14,12 @@
     "static/media/playicon.jpg": "/spotify-clone-live/static/media/playicon.b381c6b197e3b59f2b90.jpg",
     "static/media/tick.jpg": "/spotify-clone-live/static/media/tick.b6fd55e17835dcb1d138.jpg",
     "index.html": "/spotify-clone-live/index.html",
-    "main.05136c99.css.map": "/spotify-clone-live/static/css/main.05136c99.css.map",
-    "main.d33b27df.js.map": "/spotify-clone-live/static/js/main.d33b27df.js.map",
+    "main.0d30bdd2.css.map": "/spotify-clone-live/static/css/main.0d30bdd2.css.map",
+    "main.db919847.js.map": "/spotify-clone-live/static/js/main.db919847.js.map",
     "787.a19c38e9.chunk.js.map": "/spotify-clone-live/static/js/787.a19c38e9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.05136c99.css",
-    "static/js/main.d33b27df.js"
+    "static/css/main.0d30bdd2.css",
+    "static/js/main.db919847.js"
   ]
 }
