@@ -4,7 +4,7 @@
   font-size: 1.05vw;
 }
 .app_body{
-  height: 100vh;
+  height:100vh;
 }
 .top{
   display: flex;
@@ -12,9 +12,10 @@
   overflow-y: hidden;
 }
 
-/* mobile responsiveness */
-@media screen and (min-height:800px) {
-  .app_body{
-    height: 94vh;
+
+/* mobile css begins */
+@media screen and (max-width:750px) {
+  .top{
+    height:100%;
   }
 }
