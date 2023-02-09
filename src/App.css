@@ -13,7 +13,7 @@
 }
 
 @media screen and (max-width:1000px) and (min-height:900px) {
-  .top{
-    height: 67%;
+  .app_body{
+    height: 70vh;
   }
 }
