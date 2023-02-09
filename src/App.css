@@ -4,11 +4,17 @@
   font-size: 1.05vw;
 }
 .app_body{
-  height: 80vh;
+  height: 100vh;
 }
 .top{
   display: flex;
   /* height: 88%; */
-  height: 68%;
+  height: 88%;
   overflow-y: hidden;
+}
+
+@media screen and (max-width:1000px) and (min-height:900px) {
+  .app_body{
+    height: 88vh;
+  }
 }
