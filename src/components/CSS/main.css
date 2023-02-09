@@ -4,8 +4,8 @@
     color: white;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     overflow-y: scroll;
-    padding-bottom: 20px;   
-    height:40vh;
+    padding-bottom: 100px;   
+    height:100%;
     width: 100%;
 }
 .main::-webkit-scrollbar{
