@@ -25,95 +25,97 @@ function App() {
 
   return (
     <>
-      <Routes>
-        <Route exact path='*' element={
-          <div className='top'>
-            <Leftpannel state={'home'} user={user} />
-            <div>
-              <Navbar bgcolor='rgba(28,14,67,255)' display={'none'} user={user} setUser={setUser} />
-              <Main className='main' trackfn={setTrackslist} user={user} />
+      <div style={{ 'height': '100vh' }}>
+        <Routes>
+          <Route exact path='*' element={
+            <div className='top'>
+              <Leftpannel state={'home'} user={user} />
+              <div>
+                <Navbar bgcolor='rgba(28,14,67,255)' display={'none'} user={user} setUser={setUser} />
+                <Main className='main' trackfn={setTrackslist} user={user} />
+              </div>
             </div>
-          </div>
-        } />
-        <Route path='/search' element={
-          <div className='top'>
-            <Leftpannel state={'search'} user={user} />
-            <div>
-              <Navbar bgcolor='rgba(18,19,19,255)' display={'block'} setSearchvalue={setSearchvalue} user={user} setUser={setUser} />
-              <Searchpage search={searchvalue} current_track={current_track} trackfn={setTrackslist} track={trackslist} actvfn={setActivestate} setSearchvalue={setSearchvalue} user={user} />
+          } />
+          <Route path='/search' element={
+            <div className='top'>
+              <Leftpannel state={'search'} user={user} />
+              <div>
+                <Navbar bgcolor='rgba(18,19,19,255)' display={'block'} setSearchvalue={setSearchvalue} user={user} setUser={setUser} />
+                <Searchpage search={searchvalue} current_track={current_track} trackfn={setTrackslist} track={trackslist} actvfn={setActivestate} setSearchvalue={setSearchvalue} user={user} />
+              </div>
             </div>
-          </div>
-        } />
-        <Route path='/library' element={
-          <div className='top'>
-            <Leftpannel state={'library'} user={user}/>
-            <div>
-              <Navbar bgcolor='rgba(18,19,19,255)' display={'none'} user={user} setUser={setUser} />
-              <Library />
+          } />
+          <Route path='/library' element={
+            <div className='top'>
+              <Leftpannel state={'library'} user={user} />
+              <div>
+                <Navbar bgcolor='rgba(18,19,19,255)' display={'none'} user={user} setUser={setUser} />
+                <Library />
+              </div>
             </div>
-          </div>
-        } />
-        <Route path='/info' element={
-          <div className='top'>
-            <Leftpannel state={'none'} user={user}/>
-            <div>
-              <Navbar display={'none'} user={user} setUser={setUser} />
-              <Open current_track={current_track} trackfn={setTrackslist} track={trackslist} actvfn={setActivestate} user={user} />
+          } />
+          <Route path='/info' element={
+            <div className='top'>
+              <Leftpannel state={'none'} user={user} />
+              <div>
+                <Navbar display={'none'} user={user} setUser={setUser} />
+                <Open current_track={current_track} trackfn={setTrackslist} track={trackslist} actvfn={setActivestate} user={user} />
+              </div>
             </div>
-          </div>
-        } />
-        <Route path='/currenttrack' element={
-          <div className='top'>
-            <Leftpannel state={'none'} user={user} />
-            <div>
-              <Navbar bgcolor='rgba(19,18,19,255)' display={'none'} user={user} setUser={setUser} />
-              <Showtracks current_track={current_track} trackfn={setTrackslist} track={trackslist} actvfn={setActivestate} user={user} />
+          } />
+          <Route path='/currenttrack' element={
+            <div className='top'>
+              <Leftpannel state={'none'} user={user} />
+              <div>
+                <Navbar bgcolor='rgba(19,18,19,255)' display={'none'} user={user} setUser={setUser} />
+                <Showtracks current_track={current_track} trackfn={setTrackslist} track={trackslist} actvfn={setActivestate} user={user} />
+              </div>
             </div>
-          </div>
-        } />
-        <Route path='/catg' element={
-          <div className='top'>
-            <Leftpannel state={'none'} user={user} />
-            <div>
-              <Navbar bgcolor='rgba(19,18,19,255)' display={'none'} user={user} setUser={setUser} />
-              <Catgdisplay current_track={current_track} trackfn={setTrackslist} track={trackslist} actvfn={setActivestate} user={user} />
+          } />
+          <Route path='/catg' element={
+            <div className='top'>
+              <Leftpannel state={'none'} user={user} />
+              <div>
+                <Navbar bgcolor='rgba(19,18,19,255)' display={'none'} user={user} setUser={setUser} />
+                <Catgdisplay current_track={current_track} trackfn={setTrackslist} track={trackslist} actvfn={setActivestate} user={user} />
+              </div>
             </div>
-          </div>
-        } />
-        <Route path='/profile' element={
-          <div className='top'>
-            <Leftpannel state={'none'} user={user}/>
-            <div>
-              <Navbar bgcolor='rgb(55, 57, 54)' display={'none'} user={user} setUser={setUser} />
-              <Profile />
+          } />
+          <Route path='/profile' element={
+            <div className='top'>
+              <Leftpannel state={'none'} user={user} />
+              <div>
+                <Navbar bgcolor='rgb(55, 57, 54)' display={'none'} user={user} setUser={setUser} />
+                <Profile />
+              </div>
             </div>
-          </div>
-        } />
-        <Route path='/liked' element={
-          <div className='top'>
-            <Leftpannel state={'none'} user={user}/>
-            <div>
-              <Navbar bgcolor='rgba(79,56,154,255)' display={'none'} user={user} setUser={setUser} />
-              <Likedsongs current_track={current_track} trackfn={setTrackslist} track={trackslist} actvfn={setActivestate} user={user} />
+          } />
+          <Route path='/liked' element={
+            <div className='top'>
+              <Leftpannel state={'none'} user={user} />
+              <div>
+                <Navbar bgcolor='rgba(79,56,154,255)' display={'none'} user={user} setUser={setUser} />
+                <Likedsongs current_track={current_track} trackfn={setTrackslist} track={trackslist} actvfn={setActivestate} user={user} />
+              </div>
             </div>
-          </div>
-        } />
-        <Route path='/playlist' element={
-          <div className='top'>
-            <Leftpannel state={'none'} user={user}/>
-            <div>
-              <Navbar bgcolor='rgba(83,83,83,255)' display={'none'} user={user} setUser={setUser} />
-              <Playlist current_track={current_track} trackfn={setTrackslist} track={trackslist} actvfn={setActivestate} user={user} />
+          } />
+          <Route path='/playlist' element={
+            <div className='top'>
+              <Leftpannel state={'none'} user={user} />
+              <div>
+                <Navbar bgcolor='rgba(83,83,83,255)' display={'none'} user={user} setUser={setUser} />
+                <Playlist current_track={current_track} trackfn={setTrackslist} track={trackslist} actvfn={setActivestate} user={user} />
+              </div>
             </div>
-          </div>
-        } />
-        <Route path='/audiodisplay' element={
-          <div className='top'>
-            <Musicdisplay current_track={current_track} />
-          </div>
-        } />
-      </Routes>
-      <Play tracklist={trackslist} actv={actvstate} current_track={current_track} setCurrent_track={setCurrent_track} />
+          } />
+          <Route path='/audiodisplay' element={
+            <div className='top'>
+              <Musicdisplay current_track={current_track} />
+            </div>
+          } />
+        </Routes>
+        <Play tracklist={trackslist} actv={actvstate} current_track={current_track} setCurrent_track={setCurrent_track} />
+      </div>
     </>
   );
 }
