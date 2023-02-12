@@ -3,7 +3,7 @@
     color: lightgray;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     width: 16%;
-    height:auto;
+    height:100vh;
 }
 .Link{
     text-decoration: none;

@@ -25,7 +25,6 @@ function App() {
 
   return (
     <>
-      <div className='app_body'>
         <Routes>
           <Route exact path='*' element={
             <div className='top'>
@@ -115,7 +114,6 @@ function App() {
           } />
         </Routes>
         <Play tracklist={trackslist} actv={actvstate} current_track={current_track} setCurrent_track={setCurrent_track} />
-      </div>
     </>
   );
 }

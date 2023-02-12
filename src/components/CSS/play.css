@@ -4,8 +4,7 @@
   display: flex;
   color: lightgrey;
   column-gap: 7.7rem;
-  /* height: 90px; */
-  height: 12%;
+  height: 90px;
   position: absolute;
   bottom: 0;
   z-index: 3;
@@ -386,39 +385,5 @@ input[type="range"] {
   }
   .right {
     margin-left: 5rem;
-  }
-}
-
-
-/* mobile css begins */
-@media screen and (max-width:750px) {
-  .middle{
-    display: none;
-  }
-  .right{
-    display: none;
-  }
-  .play{
-    height:50px;
-    width: 50px;
-    border-radius: 150px;
-    right: 25px;
-    top: 82vh;
-    cursor: pointer;
-  }
-  .left{
-    padding: 0;
-  }
-  .left img {
-    padding: 0;
-    height: 50px;
-    width: 50px;
-    border-radius: 150px;
-  }
-  #playtext {
-    display: none;
-  }
-  #artist{
-    display: none;
   }
 }

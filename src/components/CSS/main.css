@@ -3,10 +3,10 @@
     background-color: rgba(18,19,19,255);
     color: white;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    overflow-y: scroll;
-    padding-bottom: 100px;   
-    height:90%;
+    overflow-y: scroll;   
+    height: 100%;
     width: 100%;
+    padding-bottom: 5vh;
 }
 .main::-webkit-scrollbar{
     background: transparent;
