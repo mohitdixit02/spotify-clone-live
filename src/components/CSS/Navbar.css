@@ -44,6 +44,9 @@
 .bi-person-circle{
     font-size: 20px;
 }
+.bi-caret-down-fill{
+    font-size: 12px;
+}
 .user_options{
     z-index: 3;
     display: none;
@@ -164,15 +167,21 @@
     .nav{
         width: auto;
         column-gap: 28vw;
+        padding-left: 30px;
     }
 }
 @media screen and (max-width:488px) {
     .nav{
-        column-gap: 26vw;
+        column-gap: 24vw;
     }
 }
 @media screen and (max-width:412px) {
     .nav{
         column-gap: 17vw;
+    }
+}
+@media screen and (max-width:380px) {
+    .nav{
+        column-gap: 10vw;
     }
 }
