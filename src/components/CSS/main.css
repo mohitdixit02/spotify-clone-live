@@ -390,3 +390,11 @@
         width: 140px;
     }
 }
+
+/* mobile responsiveness */
+@media screen and (max-width:600px) {
+    .main{
+        height: 72vh;
+        padding-bottom: 38vh;
+    }
+}
