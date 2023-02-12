@@ -8,6 +8,8 @@
   position: absolute;
   bottom: 0;
   z-index: 3;
+  opacity: 92%;
+  /* opacity: 15%; */
 }
 /* left */
 .left {
