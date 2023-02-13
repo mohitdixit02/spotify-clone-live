@@ -8,8 +8,7 @@
   position: absolute;
   bottom: 0;
   z-index: 3;
-  opacity: 92%;
-  /* opacity: 15%; */
+  opacity: 100%;
 }
 /* left */
 .left {
@@ -387,5 +386,12 @@ input[type="range"] {
   }
   .right {
     margin-left: 5rem;
+  }
+}
+
+/* mobile responsiveness */
+@media screen and (max-width:600px) {
+  .play{
+    opacity: 92%;
   }
 }

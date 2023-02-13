@@ -8,17 +8,17 @@ import database from '../Firebase/Firebase'
 import {backend_url} from '../service component/url_info'
 
 function Likedsongs(props) {
-    //Playlist Owner
-    const [name, SetName] = useState('');
-    axios.get(backend_url+'/user/getuser').then((response) => {
-        const resp = response.data[0];
-        SetName(resp['first_name']);
-    })
-
     //Getting Song_data
     const [song_data, setData] = useState([]);
     const [data_length, setDatalength] = useState();
     const user = props.user;
+    
+    //Playlist Owner
+    const [name, SetName] = useState('');
+    axios.get(backend_url+'/user/getuser/'+user).then((response) => {
+        const resp = response.data[0];
+        SetName(resp['first_name']);
+    })
 
     // Fetching Song_data
     if (user != 'none') {

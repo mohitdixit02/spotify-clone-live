@@ -133,8 +133,8 @@
     top: 0;
     background-color: none;
     border-radius: 7px;
-    height: 270px;
-    width: 204px;
+    height:17.4rem;
+    width: 12.5rem;
     cursor: pointer;
 }
 .music_cover{
@@ -143,8 +143,8 @@
     top: 0;
     background-color: none;
     border-radius: 7px;
-    height: 270px;
-    width: 204px;
+    height:17.4rem;
+    width: 12.5rem;
     cursor: pointer;
 }
 
@@ -152,17 +152,17 @@
     border-radius: 120px;
 }
 .artisttext{
-    font-size: 18px;
-    margin-top: 6px;
+    font-size: 1rem;
+    margin-top: 1px;
 }
 
 .playicon_design{
     display: none;
     opacity: 0;
-    left: 125px;
-    bottom: 87px;
-    height: 55px;
-    width: 55px;
+    left: 7.6rem;
+    bottom: 6.3rem;
+    height: 3.5rem;
+    width: 3.5rem;
     color: black;
     position: absolute;
     z-index: 3;

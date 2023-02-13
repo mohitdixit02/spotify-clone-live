@@ -212,6 +212,10 @@ const Main = (props) => {
         load_value = true
     }, []);
 
+    // scroll controll
+    // let window_scroll=window.pageYOffset;
+    // console.log(window_scroll);
+
     //Return
     return (
         <>

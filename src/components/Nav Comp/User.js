@@ -63,67 +63,73 @@ function User(props) {
 
   //get user name
   setTimeout(() => {
-    axios.get(backend_url+'/user/getuser/').then((response) => {
-      const resp = response.data[0];
-      console.log(resp)
-      setDisplayuser(resp['first_name']);
-      setUser(resp['user_id']);
-    });
-  },100);
-
-    //Artist Info function
-    function viewProfile() {
-      try {
-        axios.get(backend_url+'/user/fulluser').then((response) => {
-          navigate('/profile', {
-            state: {
-              'data': response.data[0],
-            }
-          })
-        }
-        );
-      } catch { }
-    }
-
-    if (user == 'none') {
-      return (
-        <div>
-          <div className="user" onClick={userBox}>
-            <i className="bi bi-person-circle"></i>
-            <span style={{ 'position': 'relative', 'top': '1.5px'}}>{displayuser}</span>
-            <i style={{ 'position': 'relative', 'top': '3px' }} className="bi bi-caret-down-fill"></i>
-          </div>
-          <div className="user_options" onMouseLeave={() => blur_user()} >
-            <ul type='none' className='user_opt_list'>
-              <li>About Clone</li>
-              <hr />
-              <a href={`${backend_url}/user/login`}><li>Log in</li></a>
-            </ul>
-          </div>
-        </div>
-      )
+    if (window.location.pathname.includes('user_login')) {
+      let user_name = window.location.pathname
+      user_name = user_name.substring(12, user_name.length);
+      setUser(user_name);
     }
     else {
-      return (
-        <div>
-          <div className="user" onClick={userBox}>
-            <i className="bi bi-person-circle"></i>
-            <span style={{ 'position': 'relative', 'top': '1.5px' }}>
-              {/* {displayuser} */}
-              </span>
-            <i style={{ 'position': 'relative', 'top': '3px' }} className="bi bi-caret-down-fill"></i>
-          </div>
-          <div className="user_options">
-            <ul type='none' className='user_opt_list' onMouseLeave={() => blur_user()}>
-              <li onClick={viewProfile}>Profile</li>
-              <li>About Clone</li>
-              <hr />
-              <a href={`${backend_url}/user/logout`}><li>Log Out</li></a>
-            </ul>
-          </div>
-        </div>
-      )
+      console.log('no user is login');
     }
+    axios.get(backend_url + '/user/getuser/'+user).then((response) => {
+      const resp = response.data[0];
+      setDisplayuser(resp['first_name']);
+    });
+  }, 100);
+
+  //Artist Info function
+  function viewProfile() {
+    try {
+      axios.get(backend_url + '/user/fulluser').then((response) => {
+        navigate('/profile', {
+          state: {
+            'data': response.data[0],
+          }
+        })
+      }
+      );
+    } catch { }
   }
+
+  if (user == 'none') {
+    return (
+      <div>
+        <div className="user" onClick={userBox}>
+          <i className="bi bi-person-circle"></i>
+          <span style={{ 'position': 'relative', 'top': '1.5px' }}>{displayuser}</span>
+          <i style={{ 'position': 'relative', 'top': '3px' }} className="bi bi-caret-down-fill"></i>
+        </div>
+        <div className="user_options" onMouseLeave={() => blur_user()} >
+          <ul type='none' className='user_opt_list'>
+            <li>About Clone</li>
+            <hr />
+            <a href={`${backend_url}/user/login`}><li>Log in</li></a>
+          </ul>
+        </div>
+      </div>
+    )
+  }
+  else {
+    return (
+      <div>
+        <div className="user" onClick={userBox}>
+          <i className="bi bi-person-circle"></i>
+          <span style={{ 'position': 'relative', 'top': '1.5px' }}>
+            {displayuser}
+          </span>
+          <i style={{ 'position': 'relative', 'top': '3px' }} className="bi bi-caret-down-fill"></i>
+        </div>
+        <div className="user_options">
+          <ul type='none' className='user_opt_list' onMouseLeave={() => blur_user()}>
+            <li onClick={viewProfile}>Profile</li>
+            <li>About Clone</li>
+            <hr />
+            <a href={`${backend_url}/user/logout`}><li>Log Out</li></a>
+          </ul>
+        </div>
+      </div>
+    )
+  }
+}
 
 export default User
