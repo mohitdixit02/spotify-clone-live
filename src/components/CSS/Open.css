@@ -1,6 +1,7 @@
 .open_display{
     overflow-y: overlay;
     height: 91.4%;
+    width: 84vw;
 }
 .open_display::-webkit-scrollbar{
     scrollbar-gutter: stable;

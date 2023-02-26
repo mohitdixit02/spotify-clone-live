@@ -1,7 +1,7 @@
 .search_main{
     background-color: rgba(18,19,19,255);
     height: 91.4%;
-    width: 100%;
+    width: 84vw;
     overflow-y: scroll;
     overflow-x: hidden;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
