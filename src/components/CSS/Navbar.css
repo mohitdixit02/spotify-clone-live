@@ -13,7 +13,7 @@
     display: flex;
     column-gap: 2vw;
     margin: 15px 0px;
-    margin-left: 48px;
+    margin-left: 4%;
 }
 .bttn_nav{
     display: flex;
@@ -29,20 +29,21 @@
 
 /* User CSS */
 .user{
+    position: absolute;
+    top: 15px;
+    right: 20px;
     background-color: rgb(69, 66, 95);
     color: white;
     display: flex;
     justify-content: center;
     column-gap: 7px;
-    padding: 5px 6px 2px 7px;
+    padding: 2px 6px 2px 7px;
     border-radius:15px;
-    margin-top: 18px;
-    margin-bottom: 6px;
     cursor: pointer;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .bi-person-circle{
-    font-size: 21.5px;
+    font-size: 20.5px;
 }
 .bi-caret-down-fill{
     font-size: 17px;
@@ -50,12 +51,14 @@
 .user_options{
     z-index: 3;
     display: none;
-    position: relative;
+    position: absolute;
+    right: 15px;
+    top: 60px;
     color: white;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .user span{
-    font-size: 18px;
+    font-size: 16px;
 }
 .user_opt_list{
     width: 180px;
@@ -109,80 +112,4 @@
 }
 .blank{
     width: 26vw;
-}
-
-
-/* CSS for full screen */
-@media screen and (min-height:790px){
-    .nav{
-        padding-bottom: 10px;
-    }
-}
-
-/* ResponsiveCSS */
-@media screen and (max-width:1262px){
-    .nav{
-        column-gap: 35vw;
-    }
-    .bttn_nav i{
-        padding: 8px 6px 0px 6px;
-        font-size: 18px;
-    }
-    .bi-person-circle{
-        font-size: 16px;
-    }
-    .user{
-        column-gap: 7px;
-        padding: 3px 6px 2px 7px;
-        border-radius:15px ;
-        margin-bottom: 8px;
-    }
-}
-@media screen and (max-width:1047px) {
-    .nav{
-        column-gap: 24vw;
-    }
-    .user_opt_list li{
-        font-size: 10px;
-    }
-    .user span{
-        font-size: 12px;
-    }
-}
-@media screen and (max-width:887px) {
-    .nav{
-        column-gap: 20vw;
-    }
-    .user{
-        margin-top: 8px;
-        padding: 4px 6px 2px 7px;
-    }
-}
-@media screen and (max-width:747px) {
-    .nav{
-        width: auto;
-        column-gap: 38vw;
-    }
-}
-@media screen and (max-width: 561px) {
-    .nav{
-        width: auto;
-        column-gap: 28vw;
-        padding-left: 30px;
-    }
-}
-@media screen and (max-width:488px) {
-    .nav{
-        column-gap: 24vw;
-    }
-}
-@media screen and (max-width:412px) {
-    .nav{
-        column-gap: 17vw;
-    }
-}
-@media screen and (max-width:380px) {
-    .nav{
-        column-gap: 10vw;
-    }
 }
