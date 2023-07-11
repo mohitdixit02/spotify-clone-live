@@ -1,11 +1,10 @@
 /* Main */
 .main{
-    background-color: rgba(18,19,19,255);
+    background-image: linear-gradient(180deg ,rgb(53, 42, 104) , rgb(0, 0, 0));
     color: white;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     overflow-y: scroll;
-    height: 85vh;
-    padding-bottom: 15vh;
+    height: calc(100% - 65px);
     width: 100%;
 }
 .main::-webkit-scrollbar{
@@ -23,98 +22,97 @@
 
 /* Album */
 .album{
-    background-image: linear-gradient(180deg,rgba(28,14,67,255),rgba(18,19,19,255));
-    padding: 10px 20px 10px 55px;
+    position: relative;
+    padding: 10px 20px 10px 45px;
+    color: white;
+}
+.albumflex_left{
+    position: absolute;
+    top: 50%;
+    left: 40px;
+    font-size: 28px;
+    cursor: pointer;
+}
+.albumflex_right{
+    position: absolute;
+    top: 50%;
+    right: 40px;
+    font-size: 28px;
+    cursor: pointer;
 }
 
 .albumflex{
+    margin:0 4%;
+    width: 90%;
+    overflow-x: scroll;
     display: flex;
-    column-gap: 2.2rem;
+    column-gap: 85px;
+}
+.albumflex::-webkit-scrollbar{
+    display: none;
 }
 
 .topbox_img{
-    width: 4.7rem;
-    height: 4.67rem;
-    border-top-left-radius: 4px;
-    border-bottom-left-radius: 4px;
-}
-.topbox{
-    display: flex;
-    height: 4.7rem;
-    width: 23.5rem;
-    border-radius: 4px;
-    background-color:rgba(47,39,63,255);
+    width: 50rem;
+    height: 22rem;
     cursor: pointer;
-    transition-property: background-color;
-    transition-duration: 0.1s;
-}
-.topbox:hover{
-    background-color:rgb(45, 30, 46);
-}
-.topbox_text{
-    position: relative;
-    padding: 1.7rem 0.4rem 1rem 1.4rem;
-}
-#likedalbum{
-    font-size: 1.5rem;
-    padding: 1.7rem 1.55rem 0.9rem 1.7rem;
-    border-radius: 0px;
-    border-top-left-radius: 4px;
-    border-bottom-left-radius: 4px;
 }
 
 
 /* General Box */
 .heading{
     width: 280px;
-    font-size: 25px;
+    font-size: 26px;
     font-weight: bold;
+    color: white;
 }
 .allopt{
-    margin-top: 5px;
-    font-size: 13px;
-    color: lightgray;
+    font-size: 14px;
+    color: white;
     cursor: pointer;
+    position: absolute;
+    top: 8px;
+    right: 22px;
 }
 .heading_holder_main{
+    position: relative;
     display: flex;
+    width: 100%;
     margin:10px 0px 18px 10px;
-    column-gap: 25rem;
 }
 .genbox{
-    padding: 15px;
-    border-radius: 7px;
-    height:15.2rem;
-    width: 10.76rem;
-    background-color: rgb(27, 26, 26);
+    height: auto;
+    width: 12.56rem;
 }
 .genbox_img{
-    border-radius: 7px;
-    height: 10.5rem;
-    width: 10.5rem;
+    border-radius: 12px;
+    height: 12.5rem;
+    width: 100%;
 }
 .genbox_text1{
-    font-size: 1rem;
+    font-size: 1.2rem;
+    color: white;
     font-weight: bolder;
     position: relative;
-    padding: 9px 3px 5px 0px;
+    padding: 5px 3px 5px 4px;
 }
 .genbox_text2{
     position: relative;
-    color: lightgrey;
-    font-size: 0.68rem;
-    padding: 3px 3px 5px 2px;
+    color: white;
+    font-size: 0.78rem;
+    font-weight: 400;
+    padding: 1px 3px 5px 6px;
 }
 .genbox_main{
-    padding: 25px 20px 5px 55px;
-    width:74.5rem ;
-    height: 330px;
+    padding: 5px 25px;
+    width: calc(100% - 50px);
+    height: auto;
     overflow-x: hidden;
     overflow-y: hidden;
 }
 .genbox_flex{
     display: flex;
-    column-gap:2.2rem;
+    column-gap:2.8rem;
     overflow-x: scroll;
     overflow-y: hidden;
 }
@@ -126,14 +124,13 @@
     left: 5px;
 }
 
-/* Start from here */
 .artist_cover{
     z-index: 2;
     position: absolute;
     top: 0;
     background-color: none;
     border-radius: 7px;
-    height:17.4rem;
+    height:16.4rem;
     width: 12.5rem;
     cursor: pointer;
 }
@@ -159,8 +156,8 @@
 .playicon_design{
     display: none;
     opacity: 0;
-    left: 7.6rem;
-    bottom: 6.3rem;
+    left: 7.9rem;
+    bottom: 5.9rem;
     height: 3.5rem;
     width: 3.5rem;
     color: black;
@@ -215,7 +212,7 @@
 .error_div{
     background-image: linear-gradient(180deg,rgba(28,14,67,255),rgba(18,19,19,255));
     color: white;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     height:100%;
     display: none;
 }
@@ -239,162 +236,99 @@
 }
 
 /* Responsive CSS */
-@media screen and (max-width:1313px) {
-    .heading_holder_main{
-        column-gap: calc(11vw/0.5)
-    }
-}
-@media screen and (max-width:1259px) {
-    .albumflex{
-        column-gap: 15px;
-    }
+@media screen and (max-width: 1240px) {
     .topbox_img{
-        width: 63px;
-        height: 62px;
+        width: 30rem;
+        height: 15rem;
     }
-    .topbox{
-        height: 62px;
-        width: calc(12vw*2);
+    .albumflex{
+        column-gap: 70px;
     }
-    #likedalbum{
-        font-size: 21px;
-        padding: 21px 20px 11px 21px;
-    }
-    .topbox_text{
-        font-size: 12px;
-        padding: 22px 5px 2px 18px;
-    }
-    #wish{
-        font-size: 22px;
-    }
-
-    /* general box */
-    .heading_holder_main{
-        column-gap: calc(9.5vw/0.5)
-    }
+    
+    
     .genbox{
-        height:210px;
-        width: 140px;
+        width: 180px;
     }
     .genbox_img{
-        height: 135px;
-        width: 138px;
-    }
-    .genbox_text1{
-        font-size: 13px;
-    }
-    .genbox_text2{
-        font-size: 10px;
-    }
-    .genbox_main{
-        width:68.5rem;
-    }
-    .genbox_flex{
-        display: flex;
-        column-gap:2.2rem;
+        height: 11.5rem;
     }
 }
-@media screen and (max-width:1047px) {
-    .topbox{
-        width: calc(11.3vw*2);
+@media screen and (max-width: 895px) {
+    .album{
+        padding-left: 25px;
     }
-    .heading_holder_main{
-        column-gap: calc(32vw*0.5)
+    .albumflex_left{
+        position: absolute;
+        left: 15px;
     }
-    .genbox_main{
-        padding: 25px 15px 5px 35px;
-        width:67rem;
+    .albumflex_right{
+        position: absolute;
+        right: 15px;
     }
-}
-@media screen and (max-width:887px) {
-    .respndiv_album{
-        margin-top: 18px;
-        display: flex;
-        column-gap: 15px;
+
+
+    .topbox_img{
+        width: 35rem;
+        height: 18rem;
     }
     .albumflex{
-        flex-direction: column;
-        row-gap: 15px;
+        column-gap: 60px;
     }
-    .topbox{
-        width: calc(15.2vw*2);
+    .genbox{
+        width: 150px;
     }
-    .heading_holder_main{
-        column-gap: calc(19.6vw*0.5)
+    .genbox_img{
+        height: 9.5rem;
     }
-    .genbox_main{
-        width:62rem;
-    }
-}
-@media screen and (max-width:747px) {
-    .main{
-        width: 100vw;
-    }
-    .topbox{
-        width: calc(21vw*2);
-    }
-    .heading_holder_main{
-        column-gap: calc(38vw*0.5)
-    }
-    .genbox_main{
-        width:84rem;
+    .genbox_flex{
+        column-gap: 45px;
     }
 }
-@media screen and (max-width:675px) {
-    .topbox{
-        width: calc(19vw*2);
+@media screen and (max-width: 690px) {
+    .topbox_img{
+        width: calc(100vw - 150px);
+        height: calc((100vw - 150px)/1.75);
     }
-    .heading_holder_main{
-        column-gap: calc(28vw*0.5)
+    .albumflex{
+        column-gap: 15px;
     }
-    .album{
-        padding-left: 35px;
+    .albumflex_left{
+        position: absolute;
+        left: 10px;
+        font-size: 20px;
+        top: 53%;
     }
-    .genbox_main{
-        padding: 25px 15px 5px 25px;
-        width:80rem;
-    }
-}
-@media screen and (max-width:604px) {
-    .heading_holder_main{
-        column-gap: calc(22vw*0.5)
-    }
-    .heading{
-        width: 240px;
-        font-size: 23px;
+    .albumflex_right{
+        position: absolute;
+        right: 10px;
+        font-size: 20px;
+        top: 53%;
     }
 }
-@media screen and (max-width:546px) {
-    .heading_holder_main{
-        column-gap: calc(18vw*0.5)
-    }
-}
-@media screen and (max-width:488px) {
-    .heading_holder_main{
-        column-gap: calc(11.5vw*0.5)
-    }
-}
-@media screen and (max-width:412px) {
-    .heading_holder_main{
-        column-gap:calc(20vw*0.5);
-    }
-    .heading{
-        width: 140px;
-    }
-}
-@media screen and (max-width:310px) {
-    .heading_holder_main{
-        column-gap:calc(12vw*0.5);
-    }
-    .heading{
-        width: 140px;
+@media screen and (max-width: 518px) {
+    .genbox_flex{
+        column-gap: 35px;
     }
 }
 
-/* mobile responsiveness */
-@media screen and (max-width:600px) {
-    .main{
-        height: 72vh;
-        padding-bottom: 38vh;
+@media screen and (max-width: 690px) {
+    .topbox_img{
+        width: calc(100vw - 100px);
+        height: calc((100vw - 100px)/1.75);
+    }
+    .albumflex{
+        column-gap: 15px;
+    }
+    .albumflex_left{
+        position: absolute;
+        left: 10px;
+        font-size: 20px;
+        top: 53%;
+    }
+    .albumflex_right{
+        position: absolute;
+        right: 10px;
+        font-size: 20px;
+        top: 53%;
     }
 }

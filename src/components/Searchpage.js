@@ -35,22 +35,22 @@ function Searchpage(props) {
   const trackfn = props.trackfn;
   const tracklist = props.track;
   const ctrack = props.current_track;
-    function playsongtd(e) {
-        let temp = e.target.parentElement.id;
-        if (temp!='') {
-            if (tracklist != song) {
-                if (props.type == 'music') {
-                    trackfn([song]);
-                }
-                else {
-                    trackfn(song);
-                }
-            }
-            let fn = props.actvfn;
-            console.log(temp);
-            fn(temp);
+  function playsongtd(e) {
+    let temp = e.target.parentElement.id;
+    if (temp != '') {
+      if (tracklist != song) {
+        if (props.type == 'music') {
+          trackfn([song]);
         }
+        else {
+          trackfn(song);
+        }
+      }
+      let fn = props.actvfn;
+      console.log(temp);
+      fn(temp);
     }
+  }
 
   //Color change of active song
   useEffect(() => {
@@ -85,10 +85,10 @@ function Searchpage(props) {
     let l2 = 200 * Math.random()
     let l3 = 200 * Math.random()
     if (l1 < 50) {
-      l1 = l1 + 100;
+      l1 = l1 + 180;
     }
     if (l2 < 50) {
-      l2 = l2 + 100;
+      l2 = l2 + 130;
     }
     if (l3 < 50) {
       l3 = l3 + 100;
@@ -116,7 +116,7 @@ function Searchpage(props) {
     let play_id = e.target.id;
     play_id = play_id.substr(0, play_id.length - 5);
     try {
-      axios.get(backend_url+`/req_data/artist/${play_id}`).then((response) => {
+      axios.get(backend_url + `/req_data/artist/${play_id}`).then((response) => {
         let temp = response.data[0]
         trackfn(temp['artist_song_list']);
       })
@@ -128,10 +128,20 @@ function Searchpage(props) {
   useEffect(() => {
     if (value != '') {
       try {
-        axios.get(backend_url+`/req_data/search/${value}`).then((response) => {
+        axios.get(backend_url + `/req_data/search/${value}`).then((response) => {
           setSong(response.data['song']);
+
+          const artist_data = response.data['artist'];
+          const artist_separate = [];
+
+          // generating data for display
+          for (let i = 0; i < artist_data.length; i = i + 5) {
+            let temp = artist_data.slice(i, i + 5)
+            artist_separate.push(temp);
+          }
+          setArtist(artist_separate);
+
           setAlbum(response.data['album']);
-          setArtist(response.data['artist']);
 
           if (response.data['song'].length == 0) {
             let w = document.getElementById('songlist_maindiv');
@@ -190,7 +200,7 @@ function Searchpage(props) {
       if (k.className == 'bi bi-heart') {
         k.className = 'bi bi-heart-fill heart_icon';
         //Setting database
-        axios.get(backend_url+`/req_data/${icon_id}`).then((response) => {
+        axios.get(backend_url + `/req_data/${icon_id}`).then((response) => {
           const data = response.data[0];
           set(ref(database, 'users/' + user + '/liked/' + icon_id + '/'), {
             song: data
@@ -277,7 +287,7 @@ function Searchpage(props) {
     let play_id = e.target.id;
     play_id = play_id.substr(0, play_id.length - 5);
     try {
-      axios.get(backend_url+`/req_data/${play_id}`).then((response) => {
+      axios.get(backend_url + `/req_data/${play_id}`).then((response) => {
         trackfn([response.data[0]]);
       })
     } catch { }
@@ -427,22 +437,30 @@ function Searchpage(props) {
               <div className='heading_search'>Artist</div><br />
               <div className="genbox_flex_search">
                 {
-                  artist.map((artist_key) => {
+                  artist.map((val) => {
                     return (
-                      <div key={artist_key.id} className='artist_cover_box' >
-                        <div className="genbox_search">
-                          <div>
-                            <img src={backend_url + `${artist_key.artist_img}`} alt="Image" className="searchresult_img artist" />
-                          </div>
-                          <div className="searchresult_text1 artisttext">
-                            {artist_key.name}
-                          </div>
-                          <div className="searchresult_text2">Artist</div>
-                        </div>
-                        <div className="search_artist_cover" id={artist_key.name} onMouseEnter={getelement} onMouseLeave={removeelement} onClick={artistinfo}>
-                          <img src={p} className='playicon_design' id={`${artist_key.name} play`} onClick={artistPlay} />
-                        </div>
-                      </div>
+                    <div className='search_artist_col_flex'>
+                      {
+                        val.map((artist_key) => {
+                          return (
+                            <div key={artist_key.id} className='artist_cover_box' >
+                              <div className="genbox_search">
+                                <div>
+                                  <img src={backend_url + `${artist_key.artist_img}`} alt="Image" className="searchresult_img artist" />
+                                </div>
+                                <div className="searchresult_text1 artisttext">
+                                  {artist_key.name}
+                                </div>
+                                <div className="searchresult_text2">Artist</div>
+                              </div>
+                              <div className="search_artist_cover" id={artist_key.name} onMouseEnter={getelement} onMouseLeave={removeelement} onClick={artistinfo}>
+                                <img src={p} className='playicon_design' id={`${artist_key.name} play`} onClick={artistPlay} />
+                              </div>
+                            </div>
+                          )
+                        })
+                      }
+                    </div>
                     )
                   })
                 }
@@ -450,7 +468,7 @@ function Searchpage(props) {
 
             <div id="albumbox_main">
               <div className='heading_search'>Album</div><br />
-              <div className="genbox_flex_search">
+              <div className="search_artist_col_flex">
                 {
                   album.map((album_key) => {
                     return (
@@ -475,6 +493,7 @@ function Searchpage(props) {
             </div>
           </div>
         </div>
+        <br /> <br /> <br /> <br />
       </div>
     )
   }

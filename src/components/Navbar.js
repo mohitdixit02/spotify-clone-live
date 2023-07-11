@@ -7,7 +7,7 @@ import User from './Nav Comp/User';
 
 const Navbar = (props) => {
     const location =useLocation();
-    if(location.pathname!='/info'){
+    // if(location.pathname!='/info'){
         return (
             <>
             <div className='nav' style={{
@@ -21,37 +21,37 @@ const Navbar = (props) => {
             </div>
             </>
         );
-    }
-    else if(location.state.type=='music' || location.state.type=='album'){
-        return (
-            <>
-            <div className='nav' style={{
-                'backgroundColor': 'rgba(210,58,95,255)'
-            }}>
-                <div className="left_nav">
-                <Button/>
-                <Search display={props.display}/>
-                </div>
-                <User user={props.user} setUser={props.setUser}/>
-            </div>
-        </>
-        );
-    }
-    else if(location.state.type=='artist'){
-        return (
-            <>
-            <div className='nav' style={{
-                'backgroundColor':'rgba(48,88,208,255)'
-            }}>
-                <div className="left_nav">
-                <Button/>
-                <Search display={props.display}/>
-                </div>
-                <User user={props.user} setUser={props.setUser}/>
-            </div>
-        </>
-        );
-    }
+    // }
+    // else if(location.state.type=='music' || location.state.type=='album'){
+    //     return (
+    //         <>
+    //         <div className='nav' style={{
+    //             'backgroundColor': 'rgba(210,58,95,255)'
+    //         }}>
+    //             <div className="left_nav">
+    //             <Button/>
+    //             <Search display={props.display}/>
+    //             </div>
+    //             <User user={props.user} setUser={props.setUser}/>
+    //         </div>
+    //     </>
+    //     );
+    // }
+    // else if(location.state.type=='artist'){
+    //     return (
+    //         <>
+    //         <div className='nav' style={{
+    //             'backgroundColor':'rgba(48,88,208,255)'
+    //         }}>
+    //         <div className="left_nav">
+    //             <Button/>
+    //             <Search display={props.display}/>
+    //             </div>
+    //             <User user={props.user} setUser={props.setUser}/>
+    //         </div>
+        // </>
+        // );
+    // }
 }
 
 export default Navbar;

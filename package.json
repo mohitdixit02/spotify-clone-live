@@ -1,7 +1,7 @@
 {
   "name": "spotify",
-  "homepage": "https://mohitdixit02.github.io/spotify-clone-live/",
   "version": "0.1.0",
+  "proxy":"http://127.0.0.1:8000",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
@@ -41,8 +41,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "gh-pages": "^5.0.0"
   }
 }

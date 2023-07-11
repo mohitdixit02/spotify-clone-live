@@ -2,7 +2,7 @@
     width: 84vw;
     height: 81.2vh;
     overflow-y: scroll ;
-    background-color: rgba(19,18,19,255);
+    background-color: rgb(7, 2, 30);;
 }
 .Library_main::-webkit-scrollbar{
     scrollbar-gutter: stable;
@@ -18,15 +18,15 @@
     color: white;
     font-size: 45px;
     font-weight: bolder;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 #lib_text2{
     position: relative;
     text-align: center;
     top: 27vh;
     margin-left: 1vw;
-    color: rgb(161, 255, 161);
+    color: rgb(188, 182, 246);
     font-size: 16px;
     font-weight: bolder;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }

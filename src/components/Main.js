@@ -123,59 +123,6 @@ const Main = (props) => {
         } catch (error) { }
     }
 
-    //liked album navigation
-    const [song_data, setData] = useState([]);
-    const user = props.user;
-    function liked_album(e) {
-        // Fetching Song_data
-        // if (user != 'none') {
-        //     onValue(ref(database, 'users/' + user + '/liked/'), (snapshot) => {
-        //         const value = snapshot.val();
-        //         if (value) {
-        //             const value_length = Object.keys(value).length;
-        //             let temp_array = song_data;
-        //             let array_length = temp_array.length;
-        //             for (let key in value) {
-        //                 if (array_length < value_length) {
-        //                     let temp = value[key];
-        //                     temp = temp['song'];
-        //                     temp_array.push(temp);
-        //                     array_length++;
-        //                 }
-        //             }
-        //             setData(song_data);
-
-        //             // sending data
-        //             alert('navg target')
-        //             console.log(e.target);
-        //             navigate('/liked', {
-        //                 state: {
-        //                     'data': song_data,
-        //                     'length': value_length
-        //                 }
-        //             })
-        //         }
-        //         else {
-        //             // sending data
-        //             navigate('/liked', {
-        //                 state: {
-        //                     'data': 'none',
-        //                     'length': null
-        //                 }
-        //             })
-        //         }
-        //     })
-        // }
-        // else {
-        //     navigate('/liked', {
-        //         state: {
-        //             'data': 'User',
-        //             'length': null
-        //         }
-        //     })
-        // }
-    }
-
     // Data Fetch on loading
     const [data, getData] = useState([]);
     const [artist, getArtistData] = useState([]);
@@ -212,143 +159,134 @@ const Main = (props) => {
         load_value = true
     }, []);
 
-    // scroll controll
-    // let window_scroll=window.pageYOffset;
-    // console.log(window_scroll);
+    // album top scroll
+    function listLeft() {
+        try {
+            let a = document.getElementsByClassName('albumflex')[0];
+            a.scroll({
+                left: (a.scrollLeft - a.scrollWidth/5),
+                behavior: 'smooth'
+            })
+        } catch { }
+    }
+
+    function listRight() {
+        try {
+            let a = document.getElementsByClassName('albumflex')[0];
+            a.scroll({
+                left: (a.scrollLeft + a.scrollWidth/5),
+                behavior: 'smooth'
+            })
+        } catch { }
+    }
 
     //Return
     return (
         <>
             <div className='main'>
-                    <div className='album'>
-                        <div id='wish'>{ctime}</div><br />
-                        <div className="respndiv_album">
-                            <div className="albumflex">
-                                <Link style={{ 'textDecoration': 'none', 'color': 'white' }} to='/liked'>
-                                    <div className="topbox" onMouseEnter={getelement_top} onMouseLeave={removeelement_top} id='liked songs'>
-                                        <i className="bi bi-heart-fill likedheart" id='likedalbum' />
-                                        <div className="topbox_text">
-                                            Liked Songs
-                                        </div>
-                                        <img src={p} className='playicon_design' onClick={playaudio} />
-
-                                    </div></Link>
-                                <div className="topbox" onClick={getAlbum} id={'No Competition'}>
-                                    <div>
-                                        <img src={img_data['No Competition']} alt="Image" className="topbox_img" id={'No Competition'} />
-                                    </div>
-                                    <div className="topbox_text" id={'No Competition'}>
-                                        No Competition
-                                    </div>
-                                </div>
-                                <div className="topbox" id={'Rambo'} onClick={getAlbum}>
-                                    <div>
-                                        <img src={img_data['Rambo']} alt="Image" className="topbox_img" id={'Rambo'} />
-                                    </div>
-                                    <div className="topbox_text" id={'Rambo'}>
-                                        Rambo
-                                    </div>
-                                </div>
-                            </div> <br />
-                            <div className="albumflex">
-                                <div className="topbox" onClick={artistinfo} id={'Karan Aujla'}>
-                                    <div>
-                                        <img src={img_data['Karan Aujla']} alt="Image" className="topbox_img" id={'Karan Aujla'} />
-                                    </div>
-                                    <div className="topbox_text" id={'Karan Aujla'}>
-                                        Karan Aujla
-                                    </div>
-                                </div>
-                                <div className="topbox" onClick={musicinfo} id={2}>
-                                    <div>
-                                        <img src={img_data["Braat"]} alt="Image" className="topbox_img" id={2} />
-                                    </div>
-                                    <div className="topbox_text" id={2}>
-                                        Braat
-                                    </div>
-                                </div>
-                                <div className="topbox" onClick={musicinfo} id={10}>
-                                    <div>
-                                        <img src={img_data['Kesariya']} alt="Image" className="topbox_img" id={10} />
-                                    </div>
-                                    <div className="topbox_text" id={10}>
-                                        Kesariya
-                                    </div>
-                                </div>
+                <div className='album'>
+                    <div id='wish'>{ctime}</div><br />
+                    <i className="bi bi-chevron-left albumflex_left" onClick={listLeft}></i>
+                    <i className="bi bi-chevron-right albumflex_right" onClick={listRight}></i>
+                    <div className="albumflex">
+                        <div className="topbox" onClick={getAlbum} id={'No Competition'}>
+                            <div>
+                                <img src={img_data['No Competition']} alt="Image" className="topbox_img" id={'No Competition'} />
+                            </div>
+                        </div>
+                        <div className="topbox" id={'Rambo'} onClick={getAlbum}>
+                            <div>
+                                <img src={img_data['Rambo']} alt="Image" className="topbox_img" id={'Rambo'} />
+                            </div>
+                        </div>
+                        <div className="topbox" onClick={artistinfo} id={'Karan Aujla'}>
+                            <div>
+                                <img src={img_data['Karan Aujla']} alt="Image" className="topbox_img" id={'Karan Aujla'} />
+                            </div>
+                        </div>
+                        <div className="topbox" onClick={artistinfo} id={'Sidhu Moosewala'}>
+                            <div>
+                                <img src={img_data["Braat"]} alt="Image" className="topbox_img" id={'Sidhu Moosewala'} />
+                            </div>
+                        </div>
+                        <div className="topbox" onClick={musicinfo} id={10}>
+                            <div>
+                                <img src={img_data['Kesariya']} alt="Image" className="topbox_img" id={10} />
                             </div>
                         </div>
                     </div>
-                    {
-                        data.map((genere_key, index) => {
-                            let song_array = genere_key.list[0]
-                            if (song_array.length > 5) {
-                                song_array = song_array.slice(0, 5);
-                            }
-                            return (
-                                <div className="genbox_main" key={index}>
-                                    <div className='heading_holder_main'>
-                                        <div className='heading'>{genere_key.genere}</div><br />
-                                        <div className="allopt" id={genere_key.genere} onClick={(e) => { showCategory(e.target.id) }}>SEE ALL</div>
-                                    </div>
-                                    <div className="genbox_flex">
-                                        {
-                                            song_array.map((song_key) => {
-                                                return (
-                                                    <div key={song_key.id} className='cover_box'>
-                                                        <div className="genbox">
-                                                            <div>
-                                                                <img src={backend_url + `${song_key.song_img}`} alt="Image" className="genbox_img" />
-                                                            </div>
-                                                            <div className="genbox_text1">
-                                                                {song_key.name}
-                                                            </div>
-                                                            <div className="genbox_text2">
-                                                                {song_key.artist}
-                                                            </div>
+                </div>
+                {
+                    data.map((genere_key, index) => {
+                        let song_array = genere_key.list[0]
+                        if (song_array.length > 5) {
+                            song_array = song_array.slice(0, 5);
+                        }
+                        return (
+                            <div className="genbox_main" key={index}>
+                                <div className='heading_holder_main'>
+                                    <div className='heading'>{genere_key.genere}</div><br />
+                                    <div className="allopt" id={genere_key.genere} onClick={(e) => { showCategory(e.target.id) }}>SEE ALL</div>
+                                </div>
+                                <div className="genbox_flex">
+                                    {
+                                        song_array.map((song_key) => {
+                                            return (
+                                                <div key={song_key.id} className='cover_box'>
+                                                    <div className="genbox">
+                                                        <div>
+                                                            <img src={backend_url + `${song_key.song_img}`} alt="Image" className="genbox_img" />
                                                         </div>
-                                                        <div className="music_cover" id={song_key.id} onMouseEnter={getelement} onMouseLeave={removeelement} onClick={musicinfo}>
-                                                            <img src={p} className='playicon_design' onClick={playaudio} id={`${song_key.id} play`} />
+                                                        <div className="genbox_text1">
+                                                            {song_key.name}
+                                                        </div>
+                                                        <div className="genbox_text2">
+                                                            {song_key.artist}
                                                         </div>
                                                     </div>
-                                                )
-                                            })
-                                        }
-                                    </div>
+                                                    <div className="music_cover" id={song_key.id} onMouseEnter={getelement} onMouseLeave={removeelement} onClick={musicinfo}>
+                                                        <img src={p} className='playicon_design' onClick={playaudio} id={`${song_key.id} play`} />
+                                                    </div>
+                                                </div>
+                                            )
+                                        })
+                                    }
                                 </div>
-                            )
-                        }
+                            </div>
                         )
                     }
-                    <div className="genbox_main">
-                        <div style={{ 'display': 'flex', 'margin': '10px 0px 18px 10px', 'columnGap': '26vw' }}>
-                            <div className='heading'>Artist</div><br />
-                            <div className="allopt" onClick={showArtistlist}>SEE ALL</div>
-                        </div>
-                        <div className="genbox_flex">
-                            {
-                                artist.map((artist_key) => {
-                                    let temp = artist_key[0];
-                                    return (
-                                        <div key={temp.id} className='cover_box' >
-                                            <div className="genbox">
-                                                <div>
-                                                    <img src={backend_url + `${temp.artist_img}`} alt="Image" className="genbox_img artist" />
-                                                </div>
-                                                <div className="genbox_text1 artisttext">
-                                                    {temp.name}
-                                                </div>
-                                                <div className="genbox_text2">Artist</div>
-                                            </div>
-                                            <div className="artist_cover" id={temp.name} onMouseEnter={getelement} onMouseLeave={removeelement} onClick={artistinfo}>
-                                                <img src={p} className='playicon_design' id={`${temp.name} play`} onClick={artistPlay} />
-                                            </div>
-                                        </div>
-                                    )
-                                })
-                            }
-                        </div>
+                    )
+                }
+                <div className="genbox_main">
+                    <div className='heading_holder_main'>
+                        <div className='heading'>Artist</div><br />
+                        <div className="allopt" onClick={showArtistlist}>SEE ALL</div>
                     </div>
-                    <br /> <br /> <br />
+                    <div className="genbox_flex">
+                        {
+                            artist.map((artist_key) => {
+                                let temp = artist_key[0];
+                                return (
+                                    <div key={temp.id} className='cover_box' >
+                                        <div className="genbox">
+                                            <div>
+                                                <img src={backend_url + `${temp.artist_img}`} alt="Image" className="genbox_img artist" />
+                                            </div>
+                                            <div className="genbox_text1 artisttext">
+                                                {temp.name}
+                                            </div>
+                                            <div className="genbox_text2">Artist</div>
+                                        </div>
+                                        <div className="artist_cover" id={temp.name} onMouseEnter={getelement} onMouseLeave={removeelement} onClick={artistinfo}>
+                                            <img src={p} className='playicon_design' id={`${temp.name} play`} onClick={artistPlay} />
+                                        </div>
+                                    </div>
+                                )
+                            })
+                        }
+                    </div>
+                </div>
+                <br /> <br /> <br /> <br /> <br />
             </div>
             <div className='error_div'>
                 <i className="bi bi-emoji-frown"></i>

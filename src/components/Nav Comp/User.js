@@ -22,7 +22,7 @@ function User(props) {
       }
       let a = document.getElementsByClassName('user');
       if (a) {
-        a[0].style.backgroundColor = 'black';
+        a[0].style.backgroundColor = 'rgb(69, 66, 95)';
       }
     }
     else {
@@ -37,7 +37,7 @@ function User(props) {
       }
       let a = document.getElementsByClassName('user');
       if (a) {
-        a[0].style.backgroundColor = 'rgb(40,40,40)';
+        a[0].style.backgroundColor = 'rgb(50, 47, 69)';
       }
     }
   }
@@ -56,24 +56,17 @@ function User(props) {
       }
       let a = document.getElementsByClassName('user');
       if (a) {
-        a[0].style.backgroundColor = 'black';
+        a[0].style.backgroundColor = 'rgb(50, 47, 69)';
       }
     }
   }
 
   //get user name
   setTimeout(() => {
-    if (window.location.pathname.includes('user_login')) {
-      let user_name = window.location.pathname
-      user_name = user_name.substring(12, user_name.length);
-      setUser(user_name);
-    }
-    else {
-      console.log('no user is login');
-    }
-    axios.get(backend_url + '/user/getuser/'+user).then((response) => {
+    axios.get('/user/getuser/').then((response) => {
       const resp = response.data[0];
       setDisplayuser(resp['first_name']);
+      setUser(resp['user_id']);
     });
   }, 100);
 
@@ -122,9 +115,9 @@ function User(props) {
         <div className="user_options">
           <ul type='none' className='user_opt_list' onMouseLeave={() => blur_user()}>
             <li onClick={viewProfile}>Profile</li>
-            <li>About Clone</li>
+            <li>About Music World</li>
             <hr />
-            <a href={`${backend_url}/user/logout`}><li>Log Out</li></a>
+            <a href={`/user/logout`}><li>Log Out</li></a>
           </ul>
         </div>
       </div>

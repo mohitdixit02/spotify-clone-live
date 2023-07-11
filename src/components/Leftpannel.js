@@ -8,14 +8,14 @@ import logo from './media/leftpannel_logo.png'
 const Leftpannel = (props) => {
     const user = props.user;
     setTimeout(() => {
-        let w = document.getElementsByClassName('Link')
+        let w = document.getElementsByClassName('leftpannel_actv')
         for (let item of w) {
-            item.className = 'Link';
+            item.className = 'leftpannel_actv';
         }
         if (props.state != 'none') {
             let active = document.getElementById(props.state);
             try {
-                active.className = 'Link active';
+                active.className = 'leftpannel_actv active';
             } catch { }
         }
     }, 10)
@@ -122,39 +122,34 @@ const Leftpannel = (props) => {
         let k = document.getElementById('liked');
         if (window.location.pathname.includes('liked')) {
             try {
-                // k.className='liked_songs_active';
-                // console.log(k);
-                k.children[1].style.color = 'white';
-                k.style.opacity = '100%';
+                k.style.backgroundColor = 'rgb(69, 66, 95)';
             } catch { }
         }
         else {
             try {
-                // k.className='';
-                k.children[1].style.color = 'lightgray';
-                k.style.opacity = '70%';
+                k.style.backgroundColor = 'transparent';
             } catch { }
         }
     }, [window.location.pathname])
 
     return (
         <div className='leftpannel'>
-            <div className="left_logo">
-                <img src={logo} />
+            <div className="left_logo" style={{'color':'redx'}}>
+                <img src={logo} /> <span style={{'color':'blue'}}> Music </span> World
             </div>
             <div className='leftdx'>
                 <div className='left1'>
                     <ul type='none'>
-                        <Link className='Link' to='/' id='home'><li><i className="bi bi-house-door-fill"></i><span> Home</span></li></Link>
-                        <Link className='Link' to='/search' id='search'><li><i className="bi bi-search" ></i><span> Search</span></li></Link>
-                        <Link className='Link' to='/library' id='library'><li><i className="bi bi-collection" ></i><span> Your Library</span></li></Link>
+                        <Link className='Link' to='/'><li className='leftpannel_actv' id='home'><i className="bi bi-house-door-fill"></i><span> Home</span></li></Link>
+                        <Link className='Link' to='/search'><li className='leftpannel_actv' id='search'><i className="bi bi-search" ></i><span> Search</span></li></Link>
+                        <Link className='Link' to='/library'><li className='leftpannel_actv' id='library'><i className="bi bi-collection-play" ></i><span> Your Library</span></li></Link>
                     </ul>
                 </div>
                 <div className='left2'>
                     <ul type='none'>
-                        <li id='create' onClick={() => new_playlist()}><i className="bi bi-plus" ></i><span> Create Playlist</span></li>
+                        <li id='create' onClick={() => new_playlist()}><i className="bi bi-file-music-fill" ></i><span> New Playlist</span></li>
                         <Link className='Link' to='/liked'><li id='liked'>
-                            <i className="bi bi-heart-fill likedheart" ></i>
+                        <i class="bi bi-heart-fill likedheart"></i>
                             <span> Liked Songs</span></li></Link>
                     </ul>
                 </div>

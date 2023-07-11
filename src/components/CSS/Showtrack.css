@@ -2,7 +2,7 @@
     width: 84vw;
     height: 80.7vh;
     overflow-y: scroll ;
-    background-color: rgba(19,18,19,255);
+    background-color: rgb(7, 2, 30);
 }
 .showtrack_list::-webkit-scrollbar{
     scrollbar-gutter: stable;
@@ -12,12 +12,15 @@
     background-color:slategray;
 }
 .tracklisttable{
-    padding: 25px 5px 50px 15px;
+    padding: 15px;
+    margin: 20px 5px 50px 35px;
     text-align: left;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    width: 100%;
+    border-radius: 15px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 95%;
     font-size: 14px;
     color: lightgray;
+    background-color: rgb(41, 38, 53);
 }
 .songtd{
     margin-bottom: 5px;
@@ -42,16 +45,16 @@
 .songlist2_active:hover{
     cursor: pointer;
     font-weight: bold;
-    color: aliceblue;
-    background-color:rgba(99,91,92,255);
+    color: rgb(218, 211, 241);
+    background-color: rgb(88, 87, 102);
 }
 
 /* Animated Class */
 .activenow{
-    color:rgba(30,214,97,255);
+    color:rgb(255, 155, 155);
 }
 .activenow_class{
-    color:rgba(30,214,97,255);
+    color:rgb(255, 155, 155);
     margin-bottom: 3px;
     font-size: 15px;
     font-weight: bolder;
@@ -60,7 +63,7 @@
 /* heading */
 .showtrack_list h2{
     color: rgb(234, 234, 234);
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     padding-left: 92px;
     padding-top: 15px;
 }
@@ -71,17 +74,17 @@
     color: white;
     font-size: 45px;
     font-weight: bolder;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 #blank2{
     position: absolute;
     text-align: center;
-    top: 43vh;
+    top: 45vh;
     margin-left: 31.5vw;
-    color: rgb(161, 255, 161);
+    color: rgb(170, 161, 255);
     font-size: 18px;
     font-weight: bolder;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 /* heart icon */

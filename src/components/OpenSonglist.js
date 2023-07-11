@@ -14,7 +14,7 @@ function OpenSonglist(props) {
     const user = props.user;
     function playsongtd(e) {
         let temp = e.target.parentElement.id;
-        if (temp!='') {
+        if (temp != '') {
             if (tracklist != song) {
                 if (props.type == 'music') {
                     trackfn([song]);
@@ -81,7 +81,7 @@ function OpenSonglist(props) {
                     i.className = 'span_class';
                 }
                 let index = document.getElementById(`${ctrack.id} index`);
-                let name = document.getElementById(`${ctrack.id} name`);
+                let name = document.getElementById(`${ctrack.id} songname`);
                 if (index) {
                     index.className = 'songtd index_class activenow';
                 }
@@ -104,7 +104,6 @@ function OpenSonglist(props) {
 
         //reducing index after deletion
         let rows_set = document.getElementsByClassName('index_class');
-        console.log(target_row_no);
         for (let key of rows_set) {
             let check_value = parseInt(key.innerText);
             let comp_value = parseInt(target_row_no);
@@ -139,12 +138,12 @@ function OpenSonglist(props) {
                                 <td style={{ 'textAlign': 'center', 'borderTopLeftRadius': '5px', 'borderBottomLeftRadius': '5px' }} className='songtd index_class' id={`${song.id} index`}>1</td>
                                 <td id={song.id} style={{ 'display': 'flex' }} className='songtd'>
                                     <div id={song.id} className='songtd_div'>
-                                        <span className='span_class' id={`${song.id} name`}>{song.name}</span>
+                                        <span className='span_class' id={`${song.id} songname`}>{song.name}</span>
                                         {song.artist}
                                     </div>
                                 </td>
                                 <td className='songtd'>{plays}</td>
-                                <td className='songtd' style={{ 'borderBottomRightRadius': '5px', 'borderTopRightRadius': '5px' }}><div style={{ 'display': 'flex', 'columnGap': '30px', 'paddingRight': '5px' }}><i className="bi bi-heart" id={`heart ${song.id}`} onClick={liked_song}></i><span>{duration}</span></div></td>
+                                <td className='songtd' style={{ 'borderBottomRightRadius': '5px', 'borderTopRightRadius': '5px' }}><div style={{ 'display': 'flex', 'columnGap': '30px', 'paddingRight': '12px' }}><i className="bi bi-heart" id={`heart ${song.id}`} onClick={liked_song}></i><span>{duration}</span></div></td>
                             </tr>
                         </tbody>
                     </table>
@@ -177,7 +176,7 @@ function OpenSonglist(props) {
                                             <td id={element.id} style={{ 'display': 'flex' }} className='songtd'>
                                                 <img src={backend_url + `${element.song_img}`} className='songtd_img' />
                                                 <div id={element.id} className='songtd_div'>
-                                                    <span className='span_class' id={`${element.id} name`}>{element.name}</span>
+                                                    <span className='span_class' id={`${element.id} songname`}>{element.name}</span>
                                                     {element.artist}
                                                 </div>
                                             </td>
@@ -219,7 +218,7 @@ function OpenSonglist(props) {
                                             <td id={element.id} style={{ 'display': 'flex' }} className='songtd'>
                                                 <img src={backend_url + `${element.song_img}`} className='songtd_img' />
                                                 <div id={element.id} className='songtd_div'>
-                                                    <span className='span_class' id={`${element.id} name`}>{element.name}</span>
+                                                    <span className='span_class' id={`${element.id} songname`}>{element.name}</span>
                                                     {element.artist}
                                                 </div>
                                             </td>

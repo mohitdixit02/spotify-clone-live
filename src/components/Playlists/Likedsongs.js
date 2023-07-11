@@ -5,19 +5,19 @@ import p from '../media/playicon.jpg'
 import conv from '../service component/time_conv'
 import { ref, set, onValue, remove } from "firebase/database"
 import database from '../Firebase/Firebase'
-import {backend_url} from '../service component/url_info'
+import { backend_url } from '../service component/url_info'
 
 function Likedsongs(props) {
     //Getting Song_data
     const [song_data, setData] = useState([]);
     const [data_length, setDatalength] = useState();
     const user = props.user;
-    
+
     //Playlist Owner
     const [name, SetName] = useState('');
-    axios.get(backend_url+'/user/getuser/'+user).then((response) => {
+    axios.get('/user/getuser/').then((response) => {
         const resp = response.data[0];
-        SetName(resp['first_name']);
+        SetName(resp['first_name'] + " . ");
     })
 
     // Fetching Song_data
@@ -59,7 +59,7 @@ function Likedsongs(props) {
             return (`${data_length} songs`)
         }
         else {
-            return ('No song')
+            return ('No songs')
         }
     }
 
@@ -97,7 +97,7 @@ function Likedsongs(props) {
             if (k.className == 'bi bi-heart') {
                 k.className = 'bi bi-heart-fill heart_icon';
                 //Setting data
-                axios.get(backend_url+`/req_data/${icon_id}`).then((response) => {
+                axios.get(backend_url + `/req_data/${icon_id}`).then((response) => {
                     const data = response.data[0];
                     set(ref(database, 'users/' + user + '/liked/' + icon_id + '/'), {
                         song: data
@@ -141,7 +141,7 @@ function Likedsongs(props) {
     }
 
     //Color change of active song
-    const ctrack=props.current_track;
+    const ctrack = props.current_track;
     useEffect(() => {
         //changing layout
         setTimeout(() => {
@@ -176,6 +176,57 @@ function Likedsongs(props) {
             } catch { }
             return (
                 <>
+
+                </>)
+        }
+        else {
+            try {
+                elem1.style.display = 'none';
+                elem2.style.display = 'none';
+            } catch { }
+            function error_message() {
+                if (user == 'none') {
+                    return ('You have to Login to access this feature');
+                }
+                else {
+                    return (`You haven't liked any song yet, Let's Start`);
+                }
+            }
+            return (
+                <>
+                    <div className='error_show'>
+                        <span>Nothing to show</span>
+                        <span id='error_small_show'>{error_message()}</span>
+                    </div>
+                </>
+            )
+        }
+    }
+
+    return (
+        <div className="liked_display">
+            <div className="liked_top_div">
+                <div className='liked_top_div_wrapper'></div>
+                <div className='open_top_heading'>
+                    <i className="bi bi-heart-fill" id='liked_playlist' />
+                    <div className='heading_text'>
+                        <ul type='none'>
+                            <li style={{ 'marginLeft': '6px' }}>Playlist</li>
+                            <li style={{ 'fontSize': '80px' }}>Liked Songs</li>
+                            <br />
+                            <li style={{ 'marginLeft': '6px' }}>{name} {songno()}</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div className="liked_bottom_area">
+                <div>
+                    {user == 'none' || song_data == 'none' ? <></> :
+                    <div style={{ 'display': 'flex' }}>
+                        <img src={p} className='playicon_open' onClick={play_open_like} id='playicon_main_liked' />
+                    </div>}
+                </div>
+                {(user != 'none' && song_data != 'none' ?
                     <div className="liked_list">
                         <table className='likedtable' cellSpacing={0}>
                             <thead>
@@ -204,7 +255,7 @@ function Likedsongs(props) {
                                                     </div>
                                                 </td>
                                                 <td className='likedtd'>{plays}</td>
-                                                <td className='likedtd' style={{ 'borderBottomRightRadius': '5px', 'borderTopRightRadius': '5px' }}><div style={{ 'display': 'flex', 'columnGap': '30px', 'paddingRight': '5px' }}><i className="bi bi-heart" id={`heart ${element.id}`} onClick={liked_song}></i><span>{duration}</span></div></td>
+                                                <td className='likedtd' style={{ 'borderBottomRightRadius': '5px', 'borderTopRightRadius': '5px' }}><div style={{ 'display': 'flex', 'columnGap': '30px', 'paddingRight': '10px' }}><i className="bi bi-heart" id={`heart ${element.id}`} onClick={liked_song}></i><span>{duration}</span></div></td>
                                             </tr>
                                         )
                                     })
@@ -212,63 +263,16 @@ function Likedsongs(props) {
                             </tbody>
                         </table>
                     </div>
-                </>)
-        }
-        else {
-            try {
-                elem1.style.display = 'none';
-                elem2.style.display = 'none';
-            } catch { }
-            function error_message() {
-                if (user == 'none') {
-                    return ('You have to Login to access this feature');
-                }
-                else {
-                    return (`You haven't liked any song yet, Let's Start`);
-                }
-            }
-            return (
-                <>
+                    :
                     <div className='error_show'>
                         <span>Nothing to show</span>
-                        <span id='error_small_show'>{error_message()}</span>
+                        <span id='error_small_show'>
+                            {user == 'none' ? "You have to Login to access this feature" : "You haven't liked any song yet, Let's Start"}
+                        </span>
                     </div>
-                </>
-            )
-        }
-    }
-
-    return (
-        <>
-            <div className="liked_display">
-                <div className="liked_top_div">
-                    <div style={{
-                        'backgroundImage': `linear-gradient(180deg,rgba(79,56,154,255),rgba(45,31,82,255))`,
-                        'height': '300px',
-                    }}></div>
-                    <div className='open_top_heading'>
-                        <i className="bi bi-heart-fill" id='liked_playlist' />
-                        <div className='heading_text'>
-                            <ul type='none'>
-                                <li style={{ 'marginLeft': '6px' }}>Playlist</li>
-                                <li style={{ 'fontSize': '80px' }}>Liked Songs</li>
-                                <br />
-                                <li style={{ 'marginLeft': '6px' }}>{name} . {songno()}</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div className="liked_bottom_area" style={{ 'backgroundImage': `linear-gradient(180deg,rgba(30,23,58,255),rgba(18,19,19,255)` }}>
-                    <div>
-                        <div style={{ 'display': 'flex' }}>
-                            <img src={p} className='playicon_open' onClick={play_open_like} id='playicon_main_liked' />
-                            <i className="bi bi-arrow-down-circle-fill" id='download_icon'></i>
-                        </div>
-                    </div>
-                    {return_value()}
-                </div>
+                )}
             </div>
-        </>
+        </div>
     )
 }
 
