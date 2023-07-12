@@ -1,25 +1,24 @@
 {
   "files": {
-    "main.css": "/spotify-clone-live/static/css/main.d3320cd6.css",
-    "main.js": "/spotify-clone-live/static/js/main.015c309c.js",
-    "static/js/787.a19c38e9.chunk.js": "/spotify-clone-live/static/js/787.a19c38e9.chunk.js",
-    "static/media/Rambo.jpg": "/spotify-clone-live/static/media/Rambo.20cfd5a6ff4a53a325c9.jpg",
-    "static/media/Braat.jpg": "/spotify-clone-live/static/media/Braat.788d4ed63c51e0e8af03.jpg",
-    "static/media/Kesariya.jpg": "/spotify-clone-live/static/media/Kesariya.6916da5dba8ded978eb8.jpg",
-    "static/media/No Competition.jpg": "/spotify-clone-live/static/media/No Competition.3778f0c4335d363a59db.jpg",
-    "static/media/Karan Aujla.jpg": "/spotify-clone-live/static/media/Karan Aujla.153d95865a9f85d93c01.jpg",
-    "static/media/user_logo.png": "/spotify-clone-live/static/media/user_logo.b78fae8f4086f0bb7366.png",
-    "static/media/leftpannel_logo.png": "/spotify-clone-live/static/media/leftpannel_logo.f48fb565509bf23854a8.png",
-    "static/media/spotify_dummy.png": "/spotify-clone-live/static/media/spotify_dummy.43dd87586e71727a5849.png",
-    "static/media/playicon.jpg": "/spotify-clone-live/static/media/playicon.b381c6b197e3b59f2b90.jpg",
-    "static/media/tick.jpg": "/spotify-clone-live/static/media/tick.b6fd55e17835dcb1d138.jpg",
-    "index.html": "/spotify-clone-live/index.html",
-    "main.d3320cd6.css.map": "/spotify-clone-live/static/css/main.d3320cd6.css.map",
-    "main.015c309c.js.map": "/spotify-clone-live/static/js/main.015c309c.js.map",
-    "787.a19c38e9.chunk.js.map": "/spotify-clone-live/static/js/787.a19c38e9.chunk.js.map"
+    "main.css": "/static/css/main.cfa8b852.css",
+    "main.js": "/static/js/main.efd5fe2e.js",
+    "static/js/787.a19c38e9.chunk.js": "/static/js/787.a19c38e9.chunk.js",
+    "static/media/Karan Aujla.jpg": "/static/media/Karan Aujla.ef387ccbe0542e51c57c.jpg",
+    "static/media/Kesariya.jpg": "/static/media/Kesariya.2b368bd2731fd4b54a93.jpg",
+    "static/media/Braat.jpg": "/static/media/Braat.874e4a4efeba34070747.jpg",
+    "static/media/No Competition.jpg": "/static/media/No Competition.30196b8f3b17fe489ea7.jpg",
+    "static/media/user_logo.png": "/static/media/user_logo.b78fae8f4086f0bb7366.png",
+    "static/media/spotify_dummy.png": "/static/media/spotify_dummy.43dd87586e71727a5849.png",
+    "static/media/Rambo.jpg": "/static/media/Rambo.158699edd228889b82b1.jpg",
+    "static/media/leftpannel_logo.png": "/static/media/leftpannel_logo.17babaed4f361a1a2f19.png",
+    "static/media/tick.jpg": "/static/media/tick.b6fd55e17835dcb1d138.jpg",
+    "index.html": "/index.html",
+    "main.cfa8b852.css.map": "/static/css/main.cfa8b852.css.map",
+    "main.efd5fe2e.js.map": "/static/js/main.efd5fe2e.js.map",
+    "787.a19c38e9.chunk.js.map": "/static/js/787.a19c38e9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d3320cd6.css",
-    "static/js/main.015c309c.js"
+    "static/css/main.cfa8b852.css",
+    "static/js/main.efd5fe2e.js"
   ]
 }
