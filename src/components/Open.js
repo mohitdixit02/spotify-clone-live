@@ -32,15 +32,11 @@ const Open = (props) => {
                     'backgroundImage': `url(${temp.song_img})`,
                 }}></div>
                     <div className='open_top_heading'>
-                        <img src={`${temp.song_img}`} style={{
-                            'height': '235px',
-                            'width': '235px',
-                            'padding': '0px 20px 20px 45px ',
-                        }} />
+                        <img className='open_top_heading_img' src={`${temp.song_img}`}/>
                         <div className='heading_text'>
                             <ul type='none'>
                                 <li style={{ 'marginLeft': '6px' }}>{temp.album}</li>
-                                <li style={{ 'fontSize': '80px' }}>{temp.name}</li>
+                                <li className='open_name_head'>{temp.name}</li>
                                 <br />
                                 <li style={{ 'marginLeft': '6px' }}>{temp.artist}.1 song</li>
                             </ul>
@@ -78,18 +74,14 @@ const Open = (props) => {
                     'backgroundImage': `url(${artist_info.about_img})`
                     }}></div>
                     <div className='open_top_heading'>
-                        <img src={`${artist_info.artist_img}`} style={{
-                            'height': '220px',
-                            'width': '220px',
-                            'marginTop': '20px',
-                            'marginLeft': '40px',
+                        <img className='open_top_heading_img_artist' src={`${artist_info.artist_img}`} style={{
                             'borderRadius': '300px'
                         }} />
                         <div className='heading_text' style={{ 'paddingTop': '28px' }}>
                             <ul type='none'>
                                 <li style={{ 'display': 'flex' }}><img src={tick} height={'40px'} width={'75px'} /><span style={{ 'position': 'relative', 'top': '10px', 'right': '18px' }}>Verified Artist</span>
                                 </li>
-                                <li style={{ 'fontSize': '90px', 'marginLeft': '28px' }}>{artist_info.name}</li>
+                                <li className='open_name_head' style={{'marginLeft': '28px' }}>{artist_info.name}</li>
                                 <br />
                                 <li style={{ 'marginLeft': '28px' }}>{listn} monthly listeners</li>
                             </ul>
@@ -106,12 +98,12 @@ const Open = (props) => {
                         <h1>About</h1>
                         <br />
                         <div className="aboutflex">
-                            <div style={{ 'height': '450px', 'width': '800px', 'overflow': 'hidden' }}>
-                                <img src={backend_url + `${artist_info.about_img}`} className='aboutimg' />
+                            <div style={{ 'height': '500px', 'width': '97%', 'overflow': 'hidden' }}>
+                                <img src={`${artist_info.about_img}`} className='aboutimg' />
                             </div>
-                            <div style={{ 'paddingTop': '30px' }}>
+                            <div className='aboutinfo'>
                                 <div style={{ 'fontSize': '22px', 'fontWeight': 'bold' }}>{listn} Monthly Listeners</div> <br /> <br />
-                                <div className='aboutinfo'>{artist_info.about}</div>
+                                <div>{artist_info.about}</div>
                             </div>
                         </div>
                     </div>
@@ -153,15 +145,11 @@ const Open = (props) => {
                     'backgroundImage': `url(${temp.song_img})`,
                     }}></div>
                     <div className='open_top_heading'>
-                        <img src={backend_url + `${temp.song_img}`} style={{
-                            'height': '235px',
-                            'width': '235px',
-                            'padding': '0px 20px 20px 45px ',
-                        }} />
+                        <img className='open_top_heading_img' src={`${temp.song_img}`} />
                         <div className='heading_text'>
                             <ul type='none'>
                                 <li style={{ 'marginLeft': '6px' }}>Album</li>
-                                <li style={{ 'fontSize': '80px' }}>{temp.album}</li>
+                                <li className='open_name_head'>{temp.album}</li>
                                 <br />
                                 <li style={{ 'marginLeft': '6px' }}>{temp.artist} . {song_no}</li>
                             </ul>

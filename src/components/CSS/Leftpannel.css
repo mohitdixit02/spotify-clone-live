@@ -136,39 +136,65 @@
 
 /* Responsiveness */
 @media screen and (max-width:1259px) {
-    .left1 ul li span{
-        font-size: 13px;
-        padding-left: 12px;
-    }
-    .left1 ul li i{
-        font-size: 18px;
-    }
-    .leftpannel{
-        width: 230px;
-    }
-    .left1 ul li{
-        padding-top: 9px;
-        padding-bottom: 9px;
-    }
-    .left2 ul li span{
-        font-size: 12.5px;
+    .left_logo{
+        padding: 12px 12px;
+        font-size: 16px;
     }
     .left_logo img{
-        height: 32px;
-        width: 115px;
+        height: 2.2rem;
+        width: 2.2rem;
     }
-    .hr{
-        width: 130px;
+}
+@media screen and (max-width:1129px) {
+    .left1 ul li i{
+        margin-left: 35px;
     }
-    .bi-plus{
-        font-size: 20px;
+    .left2 ul li i{
+        margin-left: 35px;
     }
-    .likedheart{
-        font-size: 9px;
+    .left1 ul li span{
+        display: none;
+    }
+    .left2 ul li span{
+        display: none;
     }
 }
 @media screen and (max-width:895px) {
-    .leftpannel{
+    .left_logo{
         display: none;
+    }
+    .leftdx{
+        margin: 0;
+    }
+    .leftpannel{
+        position: absolute;
+        bottom: 0;
+        z-index: 2;
+        background-color: rgb(9, 2, 35);
+        width: 100vw;
+        height: 45px;
+    }
+    .playlist_section{
+        display: none;
+    }
+    .left2{
+        display: none;
+    }
+    .leftpannel hr{
+        display: none;
+    }
+    .left1 ul{
+        width: 100vw;
+        display: flex;
+        column-gap: 6px;
+        justify-content: center;
+    }
+    .left1 ul li{
+        padding: 8px 0px;
+        margin: 2.7px 0;
+    }
+    .left1 ul li i{
+        margin-left: 0;
+        padding: 45px;
     }
 }

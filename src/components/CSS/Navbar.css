@@ -110,6 +110,46 @@
     outline: none;
     border: 1px solid black;
 }
-.blank{
-    width: 26vw;
+
+@media screen and (max-width : 700px) {
+    .search_bar input{
+        width: 220px;
+        padding-left: 40px;
+    }
+}
+
+@media screen and (max-width : 520px) {
+    .left_nav{
+        margin-left: 2%;
+        column-gap: 0.2vw;
+    }
+    .search_bar input{
+        width: 175px;
+        margin-top: 1px;
+        height: 28px;
+        padding-left: 25px;
+        font-size: 11px;
+        background-size: 13%;
+    }
+    .bttn_nav i{
+        font-size: 18px;
+    }
+    .bttn_nav{
+        column-gap: 2px;
+    }
+    .user{
+        top: 18px;
+        column-gap: 7px;
+        padding: 0px 4px 0px 5px;
+        right: 8px;
+    }
+    .bi-person-circle{
+        font-size: 17.5px;
+    }
+    .bi-caret-down-fill{
+        font-size: 12px;
+    }
+    .user span{
+        font-size: 13px;
+    }
 }

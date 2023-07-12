@@ -210,6 +210,11 @@ input[type="range"]::-webkit-slider-runnable-track{
   }
 }
 
+@media screen and (max-width: 895px) {
+  .play{
+    bottom: 47px;
+  }
+}
 @media screen and (max-width: 668px) {
   .right{
     display: none;

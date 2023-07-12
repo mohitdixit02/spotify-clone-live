@@ -165,54 +165,16 @@ function Likedsongs(props) {
 
     }, [ctrack]);
 
-    // return value function
-    function return_value() {
-        let elem1 = document.getElementById('playicon_main_liked');
-        let elem2 = document.getElementById('download_icon');
-        if (user != 'none' && song_data != 'none') {
-            try {
-                elem1.style.display = 'block';
-                elem2.style.display = 'block';
-            } catch { }
-            return (
-                <>
-
-                </>)
-        }
-        else {
-            try {
-                elem1.style.display = 'none';
-                elem2.style.display = 'none';
-            } catch { }
-            function error_message() {
-                if (user == 'none') {
-                    return ('You have to Login to access this feature');
-                }
-                else {
-                    return (`You haven't liked any song yet, Let's Start`);
-                }
-            }
-            return (
-                <>
-                    <div className='error_show'>
-                        <span>Nothing to show</span>
-                        <span id='error_small_show'>{error_message()}</span>
-                    </div>
-                </>
-            )
-        }
-    }
-
     return (
         <div className="liked_display">
             <div className="liked_top_div">
                 <div className='liked_top_div_wrapper'></div>
                 <div className='open_top_heading'>
-                    <i className="bi bi-heart-fill" id='liked_playlist' />
+                    <i className="bi bi-heart-fill" id='liked_playlist_heart' />
                     <div className='heading_text'>
                         <ul type='none'>
                             <li style={{ 'marginLeft': '6px' }}>Playlist</li>
-                            <li style={{ 'fontSize': '80px' }}>Liked Songs</li>
+                            <li className='liked_head'>Liked Songs</li>
                             <br />
                             <li style={{ 'marginLeft': '6px' }}>{name} {songno()}</li>
                         </ul>
@@ -233,7 +195,7 @@ function Likedsongs(props) {
                                 <tr>
                                     <th style={{ 'width': '5%', 'textAlign': 'center' }}>#</th>
                                     <th style={{ 'width': '65%' }}>TITLE</th>
-                                    <th style={{ 'width': '50%' }}>PLAYS</th>
+                                    <th className='table_plays' style={{ 'width': '50%' }}>PLAYS</th>
                                     <th style={{ 'width': '30%', 'textAlign': 'right', 'paddingRight': '15px' }}><i className="bi bi-clock"></i></th>
                                 </tr>
                             </thead>
@@ -254,8 +216,8 @@ function Likedsongs(props) {
                                                         {element.artist}
                                                     </div>
                                                 </td>
-                                                <td className='likedtd'>{plays}</td>
-                                                <td className='likedtd' style={{ 'borderBottomRightRadius': '5px', 'borderTopRightRadius': '5px' }}><div style={{ 'display': 'flex', 'columnGap': '30px', 'paddingRight': '10px' }}><i className="bi bi-heart" id={`heart ${element.id}`} onClick={liked_song}></i><span>{duration}</span></div></td>
+                                                <td className='likedtd table_plays'>{plays}</td>
+                                                <td className='likedtd' style={{ 'borderBottomRightRadius': '5px', 'borderTopRightRadius': '5px' }}><div className='durn_open_list' style={{ 'display': 'flex', 'columnGap': '30px', 'paddingRight': '10px' }}><i className="bi bi-heart" id={`heart ${element.id}`} onClick={liked_song}></i><span>{duration}</span></div></td>
                                             </tr>
                                         )
                                     })

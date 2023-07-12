@@ -252,6 +252,10 @@
     .genbox_img{
         height: 11.5rem;
     }
+    .playicon_design{
+        left: 6.9rem;
+        bottom: 6.9rem;
+    }
 }
 @media screen and (max-width: 895px) {
     .album{
@@ -265,8 +269,8 @@
         position: absolute;
         right: 15px;
     }
-
-
+    
+    
     .topbox_img{
         width: 35rem;
         height: 18rem;
@@ -283,6 +287,11 @@
     .genbox_flex{
         column-gap: 45px;
     }
+    .playicon_design{
+        left: 5.9rem;
+        bottom: 8.1rem;
+    }
+    
 }
 @media screen and (max-width: 690px) {
     .topbox_img{
@@ -303,6 +312,10 @@
         right: 10px;
         font-size: 20px;
         top: 53%;
+    }
+    .playicon_design{
+        left: 5.9rem;
+        bottom: 8.1rem;
     }
 }
 @media screen and (max-width: 518px) {

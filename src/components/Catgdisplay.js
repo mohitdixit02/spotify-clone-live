@@ -112,7 +112,7 @@ function Catgdisplay(props) {
                                 let duration = conv(element.duration);
                                 return (
                                     <tr key={index} id={element.id} className='songlist2_active' onClick={playsongtd}>
-                                        <td style={{ 'textAlign': 'center', 'borderTopLeftRadius': '5px', 'borderBottomLeftRadius': '5px', 'width': '20%', 'textAlign': 'center' }} id={`${element.id} index`} className='songtd index_class'>{index + 1}</td>
+                                        <td style={{ 'textAlign': 'center', 'borderTopLeftRadius': '5px', 'borderBottomLeftRadius': '5px', 'width': '15%', 'textAlign': 'center' }} id={`${element.id} index`} className='songtd index_class'>{index + 1}</td>
                                         <td id={element.id} style={{ 'display': 'flex', 'width': '50vw' }} className='songtd'>
                                             <img src={backend_url + `${element.song_img}`} className='songtd_img' />
                                             <div id={element.id} className='songtd_div'>
@@ -120,8 +120,8 @@ function Catgdisplay(props) {
                                                 {element.artist}
                                             </div>
                                         </td>
-                                        <td className='songtd' style={{ 'width': '65%' }}>{element.album}</td>
-                                        <td className='songtd' style={{ 'borderBottomRightRadius': '5px', 'borderTopRightRadius': '5px', 'width': '30%', 'textAlign': 'right', 'paddingRight': '15px' }}><div style={{ 'display': 'flex', 'columnGap': '30px', 'paddingRight': '5px' }}><i className="bi bi-heart" id={`heart ${element.id}`} onClick={liked_song}></i><span>{duration}</span></div></td>
+                                        <td className='songtd catg_album_name' style={{ 'width': '65%' }}>{element.album}</td>
+                                        <td className='songtd timeinfo_catg' style={{ 'borderBottomRightRadius': '5px', 'borderTopRightRadius': '5px', 'width': '30%', 'textAlign': 'right', 'paddingRight': '15px' }}><div style={{ 'display': 'flex', 'columnGap': '30px', 'paddingRight': '5px' }}><i className="bi bi-heart" id={`heart ${element.id}`} onClick={liked_song}></i><span>{duration}</span></div></td>
                                     </tr>
                                 )
                             })
@@ -135,9 +135,23 @@ function Catgdisplay(props) {
         const artist = data;
         const artist_separate = [];
 
+        function artistdivide_length(){
+            if(window.innerWidth > 1411){
+              return 5;
+            }
+            else if(window.innerWidth > 1151){
+              return 4;
+            }
+            else if(window.innerWidth > 703){
+              return 3;
+            }
+            else{
+              return 2;
+            }
+          }
         // generating data for display
-        for (let i = 0; i < artist.length; i = i + 5) {
-            let temp = artist.slice(i, i + 5)
+        for (let i = 0; i < artist.length; i = i + artistdivide_length()) {
+            let temp = artist.slice(i, i + artistdivide_length())
             artist_separate.push({
                 'array_no': i / 5,
                 'array_data': temp

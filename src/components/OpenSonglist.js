@@ -126,9 +126,9 @@ function OpenSonglist(props) {
                     <table className='listtable' cellSpacing={0}>
                         <thead>
                             <tr>
-                                <th style={{ 'width': '5%', 'textAlign': 'center' }}>#</th>
-                                <th style={{ 'width': '65%' }}>TITLE</th>
-                                <th style={{ 'width': '50%' }}>PLAYS</th>
+                                <th style={{ 'width': '10%', 'textAlign': 'center' }}>#</th>
+                                <th style={{ 'width': '60%' }}>TITLE</th>
+                                <th className='table_plays' style={{ 'width': '50%' }}>PLAYS</th>
                                 <th style={{ 'width': '30%', 'textAlign': 'right', 'paddingRight': '15px' }}><i className="bi bi-clock"></i></th>
                             </tr>
                         </thead>
@@ -142,8 +142,8 @@ function OpenSonglist(props) {
                                         {song.artist}
                                     </div>
                                 </td>
-                                <td className='songtd'>{plays}</td>
-                                <td className='songtd' style={{ 'borderBottomRightRadius': '5px', 'borderTopRightRadius': '5px' }}><div style={{ 'display': 'flex', 'columnGap': '30px', 'paddingRight': '12px' }}><i className="bi bi-heart" id={`heart ${song.id}`} onClick={liked_song}></i><span>{duration}</span></div></td>
+                                <td className='table_plays songtd'>{plays}</td>
+                                <td className='songtd' style={{ 'borderBottomRightRadius': '5px', 'borderTopRightRadius': '5px' }}><div className='durn_open_list' style={{ 'display': 'flex', 'columnGap': '30px', 'paddingRight': '12px' }}><i className="bi bi-heart" id={`heart ${song.id}`} onClick={liked_song}></i><span>{duration}</span></div></td>
                             </tr>
                         </tbody>
                     </table>
@@ -157,9 +157,9 @@ function OpenSonglist(props) {
                     <table className='listtable' cellSpacing={0}>
                         <thead>
                             <tr>
-                                <th style={{ 'width': '5%', 'textAlign': 'center' }}>#</th>
-                                <th style={{ 'width': '65%' }}>TITLE</th>
-                                <th style={{ 'width': '50%' }}>PLAYS</th>
+                                <th style={{ 'width': '10%', 'textAlign': 'center' }}>#</th>
+                                <th style={{ 'width': '60%' }}>TITLE</th>
+                                <th className='table_plays' style={{ 'width': '50%' }}>PLAYS</th>
                                 <th style={{ 'width': '30%', 'textAlign': 'right', 'paddingRight': '15px' }}><i className="bi bi-clock"></i></th>
                             </tr>
                         </thead>
@@ -180,8 +180,8 @@ function OpenSonglist(props) {
                                                     {element.artist}
                                                 </div>
                                             </td>
-                                            <td className='songtd'>{plays}</td>
-                                            <td className='songtd' style={{ 'borderBottomRightRadius': '5px', 'borderTopRightRadius': '5px' }}><div style={{ 'display': 'flex', 'columnGap': '30px', 'paddingRight': '5px' }}><i className="bi bi-heart" id={`heart ${element.id}`} onClick={liked_song}></i><span>{duration}</span></div></td>
+                                            <td className='table_plays songtd'>{plays}</td>
+                                            <td className='songtd' style={{ 'borderBottomRightRadius': '5px', 'borderTopRightRadius': '5px' }}><div className='durn_open_list' style={{ 'display': 'flex', 'columnGap': '30px', 'paddingRight': '5px' }}><i className="bi bi-heart" id={`heart ${element.id}`} onClick={liked_song}></i><span>{duration}</span></div></td>
                                         </tr>
                                     )
                                 })
@@ -199,9 +199,9 @@ function OpenSonglist(props) {
                     <table className='listtable' cellSpacing={0}>
                         <thead>
                             <tr>
-                                <th style={{ 'width': '5%', 'textAlign': 'center' }}>#</th>
-                                <th style={{ 'width': '65%' }}>TITLE</th>
-                                <th style={{ 'width': '50%' }}>PLAYS</th>
+                                <th style={{ 'width': '10%', 'textAlign': 'center' }}>#</th>
+                                <th style={{ 'width': '60%' }}>TITLE</th>
+                                <th className='table_plays' style={{ 'width': '50%' }}>PLAYS</th>
                                 <th style={{ 'width': '30%', 'textAlign': 'right', 'paddingRight': '15px' }}><i className="bi bi-clock"></i></th>
                             </tr>
                         </thead>
@@ -222,8 +222,8 @@ function OpenSonglist(props) {
                                                     {element.artist}
                                                 </div>
                                             </td>
-                                            <td className='songtd'>{plays}</td>
-                                            <td className='songtd'><div style={{ 'display': 'flex', 'columnGap': '30px', 'paddingRight': '5px' }}><i className="bi bi-heart" id={`heart ${element.id}`} onClick={liked_song}></i><span>{duration}</span></div></td>
+                                            <td className='table_plays songtd'>{plays}</td>
+                                            <td className='songtd'><div className='durn_open_list' style={{ 'display': 'flex', 'columnGap': '30px', 'paddingRight': '5px' }}><i className="bi bi-heart" id={`heart ${element.id}`} onClick={liked_song}></i><span>{duration}</span></div></td>
                                             <td className='songtd' style={{ 'borderBottomRightRadius': '5px', 'borderTopRightRadius': '5px' }}><i style={{'position':'relative', 'marginLeft':'15px','marginRight':'12px'}} className="bi bi-x" id={`delete ${element.id}`} onClick={(e)=>{remove_from_playlist(e.target.id,index)}}></i></td>
                                         </tr>
                                     )

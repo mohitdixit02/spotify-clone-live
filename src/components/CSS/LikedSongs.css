@@ -23,13 +23,16 @@
 .liked_top_div i{
     margin: 0px 20px 15px 45px;
 }
-#liked_playlist{
+#liked_playlist_heart{
     background-image: linear-gradient(120deg,rgb(255, 0, 0),white);
     font-size: 75px;
     border-radius: 5px;
     padding: 80px 80px 65px 80px;
     color: white;
     border-radius: 180px;
+}
+.liked_head{
+    font-size: 70px;
 }
 
 /* Div for buttons */
@@ -40,12 +43,6 @@
     margin-left: 42px;
     margin-top: 20px;
     cursor: pointer;
-}
-.bi-arrow-down-circle-fill{
-    margin-top: 34px;
-    color: rgba(32,215,97,255);
-    font-size: 28px;
-    margin-left: 30px;
 }
 
 /* DIV for list of names */
@@ -148,5 +145,79 @@
     }
     .liked_display{
         height: 92.2%;
+    }
+}
+
+/* resp */
+@media screen and (max-width : 1070px) {
+    .liked_top_div_wrapper{
+        height: 220px;
+    }
+    #liked_playlist_heart{
+        margin-top: 10px;
+        font-size: 40px;
+        height: 50px;
+        padding: 50px 50px 40px 50px;
+    }
+    .liked_head{
+        font-size: 40px;
+    }
+}
+
+@media screen and (max-width :895px){
+    .liked_display{
+        width: 100%;
+    }
+    .liked_list{
+        padding-left: 20px;
+        width: calc(100vw - 25px);
+    }
+    .likedtable{
+        width: 96%;
+    }
+    .liked_top_div i{
+        margin-left: 30px;
+    }
+}
+@media screen and (max-width :669px){
+    .table_plays{
+        display: none;
+    }
+    .bi-clock{
+        display: none;
+    }
+    .durn_open_list span{
+        display: none;
+    }
+    .durn_open_list{
+        position: relative;
+        margin-bottom: 18px;
+    }
+    .durn_open_list i{
+        position: absolute;
+        top: 0;
+        right: 18px;
+    }
+}
+
+@media screen and (max-width :500px){
+    .liked_top_div_wrapper{
+        height: 200px;
+    }
+    #liked_playlist_heart{
+        font-size: 30px;
+        padding: 40px 40px 20px 40px;
+        margin-top: 20px;
+    }
+    .liked_head{
+        font-size: 35px;
+    }
+
+    .liked_list{
+        padding-left: 10px;
+        width: calc(100vw - 15px);
+    }
+    .liked_top_div i{
+        margin-left: 20px;
     }
 }

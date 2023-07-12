@@ -8,13 +8,6 @@ function Search(props) {
     searchfn(value);
   }
 
-  if(props.display=='none'){
-    return(
-      <>
-      <div className='blank'></div>
-      </>
-    )
-  }
   return (
         <div className="search_bar" style={{'display':props.display}}>
             <input type="text" autoFocus placeholder='Artists, Songs or Podcasts' onChange={(e)=>typedValue(e.target.value)}/>

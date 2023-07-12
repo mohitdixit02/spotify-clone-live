@@ -135,8 +135,22 @@ function Searchpage(props) {
           const artist_separate = [];
 
           // generating data for display
-          for (let i = 0; i < artist_data.length; i = i + 5) {
-            let temp = artist_data.slice(i, i + 5)
+          function artistdivide_length(){
+            if(window.innerWidth > 1411){
+              return 5;
+            }
+            else if(window.innerWidth > 1151){
+              return 4;
+            }
+            else if(window.innerWidth > 703){
+              return 3;
+            }
+            else{
+              return 2;
+            }
+          }
+          for (let i = 0; i < artist_data.length; i = i + artistdivide_length()) {
+            let temp = artist_data.slice(i, i + artistdivide_length())
             artist_separate.push(temp);
           }
           setArtist(artist_separate);
@@ -329,8 +343,8 @@ function Searchpage(props) {
           <div className="upsearch">
             <div>
               <h3>Top Results</h3>
+              <br />
               <div className="topresult">
-                <img src="" className='topresult_img' />
                 <div className="serachtopsongname">
                   {
                     top.map((top_key, index) => {
@@ -401,7 +415,7 @@ function Searchpage(props) {
                 </div>
               </div></div>
 
-            <div style={{ 'paddingLeft': '48px' }} id='songlist_maindiv'>
+            <div id='songlist_maindiv'>
               <h3 style={{ 'paddingLeft': '22px' }}>Songs</h3>
               <div className="songsearch_list">
                 <table className='listtablesearch' cellSpacing={0}>
@@ -414,14 +428,14 @@ function Searchpage(props) {
                         return (
                           <tr id={song.id} key={index} className='songlist_search_active' onClick={playsongtd}>
                             <td style={{ 'textAlign': 'center', 'borderTopLeftRadius': '5px', 'borderBottomLeftRadius': '5px', 'width': '7%' }} className='songtd index_class' id={`${song.id} index`}>{index + 1}</td>
-                            <td id={song.id} style={{ 'display': 'flex', 'width': '65%' }} className='songtd'>
-                              <img src={backend_url + `${song.song_img}`} className='songtdsearch_img' />
+                            <td id={song.id} style={{ 'display': 'flex' }} className='songtd search_impinfo'>
+                              <img src={`${song.song_img}`} className='songtdsearch_img' />
                               <div id={song.id} className='songtdsearch_div'>
                                 <span className='spansearch_class' id={`${song.id} name`}>{song.name}</span>
                                 {song.artist}
                               </div>
                             </td>
-                            <td className='songtd' style={{ 'borderBottomRightRadius': '5px', 'borderTopRightRadius': '5px', 'width': '20%' }}><div style={{ 'display': 'flex', 'columnGap': '30px', 'paddingRight': '5px' }}><i className="bi bi-heart" id={`heart ${song.id}`} onClick={liked_song}></i><span>{duration}</span></div></td>
+                            <td className='songtd search_addtninfo' style={{ 'borderBottomRightRadius': '5px', 'borderTopRightRadius': '5px', 'width': '20%' }}><div style={{ 'display': 'flex', 'columnGap': '30px', 'paddingRight': '5px' }}><i className="bi bi-heart" id={`heart ${song.id}`} onClick={liked_song}></i><span>{duration}</span></div></td>
                           </tr>
                         )
                       })
@@ -493,7 +507,6 @@ function Searchpage(props) {
             </div>
           </div>
         </div>
-        <br /> <br /> <br /> <br />
       </div>
     )
   }
